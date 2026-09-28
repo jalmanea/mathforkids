@@ -1,20 +1,27 @@
 import { GoalRing, Icon, ar, count } from '../components.jsx';
-import { lessonsFor } from '../curriculum.js';
+import { lessonsFor, termLabel } from '../curriculum.js';
 
-/** Lesson to continue: the last one chosen (not a review), or the next one once it has 3 stars. */
+const unstarred = (progress) => (l) => (progress.get(l.id)?.stars ?? 0) < 3;
+
+/** The lesson last chosen in this grade/semester (reviews don't count). */
+export function lastChosen(settings) {
+  return settings.lastLessons?.[`${settings.grade}-${settings.semester}`];
+}
+
+/** Lesson to continue: the last one chosen in this term, or the next one once it has 3 stars. */
 export function continueLesson(lessons, progress, lastLessonId) {
   if (!lessons.length) return null;
   const last = lessons.find((l) => l.id === lastLessonId);
-  if (!last) return lessons[0];
+  if (!last) return lessons.find(unstarred(progress)) ?? lessons[0];
   if ((progress.get(last.id)?.stars ?? 0) < 3) return last;
   const i = lessons.indexOf(last);
-  return lessons.slice(i + 1).find((l) => (progress.get(l.id)?.stars ?? 0) < 3) ?? last;
+  return lessons.slice(i + 1).find(unstarred(progress)) ?? last;
 }
 
 export function Home({ app }) {
   const { totals, settings, progress, go } = app;
   const lessons = lessonsFor(settings.grade, settings.semester);
-  const next = continueLesson(lessons, progress, settings.lastLessonId);
+  const next = continueLesson(lessons, progress, lastChosen(settings));
   const { level, fraction } = totals.level;
 
   return (
@@ -58,7 +65,7 @@ export function Home({ app }) {
           <span>ابدأ التمرين</span>
         </button>
       )}
-      {next && <p class="muted center-text" style={{ margin: '-8px 0 0', fontSize: '15px' }}>{next.title}</p>}
+      {next && <p class="muted center-text" style={{ margin: '-8px 0 0', fontSize: '15px' }}>{next.title}<br />{termLabel(settings.grade, settings.semester)}</p>}
       <button class="btn secondary" onClick={() => go({ name: 'map' })}>
         {Icon.map}<span>خريطة الدروس</span>
       </button>

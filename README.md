@@ -189,7 +189,8 @@ npm run build
 app/index.html, vite.config.js   entry + build/PWA config (manifest: Arabic name, dir rtl, standalone)
 app/src/main.jsx                 app root: state, derived totals, celebrations, navigation
 app/src/screens/                 Home, LessonMap, Practice, Summary, Parent (PIN, report, settings, backup)
-app/src/visuals/                 SVG renderers keyed by visual.kind: place_value_chart, array, equal_groups
+app/src/visuals/                 renderers keyed by visual.kind: place_value_chart, array, equal_groups,
+                                 object_cloud, tally_table, pictograph, bar_graph, table, bag
 app/src/game/                    pure game logic (tested in app/test/):
   points.js                        10 / 5 / 2 by try, +10 every 5 first-try correct in a row
   streak.js, days.js               daily goal (default 20), streak with one free missed day per 7, local-time days
@@ -205,7 +206,17 @@ app/src/theme.css                tokens per theme: neutral, and "stitch" (colour
 
 ### Behaviour notes
 
-- **Lessons shown:** a lesson appears on the map only if the app can render everything it generates. `curriculum.js` samples each tier and checks every `visual.kind` against the renderer registry; fraction displays are not rendered yet. Grade 3 semester 1 is fully playable (42 lessons). Other terms can be chosen in parent settings, but their lessons that need semester 2 visuals stay hidden until those renderers exist.
+- **Choosing a term:** the child picks the grade and semester at the top of the lesson map (e.g. to revise grade 2). The home screen's "continue" remembers the last chosen lesson per term. Stars, points and the streak are shared across terms.
+- **Lessons shown:** a lesson appears on the map only if the app can render everything it generates. `curriculum.js` samples each tier and checks every `visual.kind` against the renderer registry; fraction displays are not rendered yet.
+
+  | Term | Playable |
+  |---|---|
+  | Grade 2, semester 1 | 51 of 51 |
+  | Grade 2, semester 2 | 28 of 53 |
+  | Grade 3, semester 1 | 42 of 42 |
+  | Grade 3, semester 2 | 29 of 48 |
+
+  The rest need the clock, money, fraction, ruler/area and geometry renderers.
 - **Answering:**
   - A child gets 3 tries. A wrong choice is greyed out, and after the third miss the answer is shown.
   - Every response goes through `recordResponse`. The attempt row is written as soon as the exercise is shown, updated on each response, and closed as `correct`, `gave_up` or (on leaving mid-exercise) `skipped`.

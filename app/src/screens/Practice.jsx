@@ -73,7 +73,8 @@ export function Practice({ app, lessonId }) {
       planned: length,
     };
     db.sessions.put(session);
-    app.updateSetting('lastLessonId', lessonId);
+    const l = lessonById.get(lessonId);
+    app.updateSetting('lastLessons', { ...settings.lastLessons, [`${l.grade}-${l.semester}`]: lessonId });
     sessionRef.current = {
       ...session,
       plan: planSession({ lessonId, reviewPool: reviewPoolFor(lessonId, lessons, progRef.current), attempts: app.attempts, length }),
