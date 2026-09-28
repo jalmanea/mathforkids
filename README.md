@@ -1,13 +1,12 @@
-# Saudi math exercise engine: Phase 1
+# Saudi math practice: exercise engine and app
 
-This is the content and logic layer for a math practice app. It targets **grade 2 and grade 3 of the Saudi national curriculum** (الصف الثاني والثالث الابتدائي), covering both semesters.
+A math practice app for **grade 2 and grade 3 of the Saudi national curriculum** (الصف الثاني والثالث الابتدائي).
 
-It has three parts:
-- a machine-readable curriculum map ([curriculum/curriculum.json](curriculum/curriculum.json));
-- one randomized generator per lesson;
-- a data model for logging each attempt.
-
-There is no UI, game logic or scoring here; those come in Phase 2.
+- **Phase 1, the engine (`src/`, `curriculum/`):**
+  - a machine-readable curriculum map ([curriculum/curriculum.json](curriculum/curriculum.json)), both semesters of both grades;
+  - one randomized generator per lesson;
+  - a data model for logging each attempt.
+- **Phase 2, the app (`app/`):** an Arabic, RTL web app. It installs to the iPhone home screen, works offline, and adds points, streaks, levels and a parent view. See [The practice app](#the-practice-app-phase-2) below.
 
 ```bash
 npm test
@@ -157,3 +156,62 @@ const same = generateExercise(curriculum, 'g2-s1-u5-l7', 2, { seed: ex.seed }); 
 ## Known limits
 
 See [curriculum/SOURCES.md](curriculum/SOURCES.md) for flagged lessons and for what is deliberately not generated.
+
+## The practice app (Phase 2)
+
+```bash
+npm install
+```
+
+```bash
+npm run dev
+```
+
+```bash
+npm run build
+```
+
+- **`npm run dev`** serves the app at http://localhost:5173.
+- **`npm run build`** writes the installable, offline build to `dist/`. Preview it with `npm run preview`.
+- **`npm test`** runs the engine suite plus the app's game-logic tests (`app/test/`).
+- **Deploy:** pushing to `main` runs [.github/workflows/deploy.yml](.github/workflows/deploy.yml). It tests, builds with `BASE_PATH=/<repo-name>/`, and publishes to GitHub Pages.
+
+### Stack
+
+- **Libraries:** Vite, Preact, `vite-plugin-pwa` (a Workbox service worker that precaches everything) and Dexie (IndexedDB). They are all dependencies of the root `package.json`; the engine in `src/` stays dependency-free.
+- **Engine import:** the app imports the engine from `../src/index.js` unchanged. `curriculum.json` is bundled into the JavaScript, so it works offline.
+- **Font:** Tajawal, self-hosted in `app/public/fonts/` (SIL OFL, licence alongside).
+- **Icons:** drawn by `npm run icons` (`app/scripts/make-icons.js`), which needs no image library.
+
+### Layout
+
+```
+app/index.html, vite.config.js   entry + build/PWA config (manifest: Arabic name, dir rtl, standalone)
+app/src/main.jsx                 app root: state, derived totals, celebrations, navigation
+app/src/screens/                 Home, LessonMap, Practice, Summary, Parent (PIN, report, settings, backup)
+app/src/visuals/                 SVG renderers keyed by visual.kind: place_value_chart, array, equal_groups
+app/src/game/                    pure game logic (tested in app/test/):
+  points.js                        10 / 5 / 2 by try, +10 every 5 first-try correct in a row
+  streak.js, days.js               daily goal (default 20), streak with one free missed day per 7, local-time days
+  progress.js                      per-lesson stars (top-step first-try accuracy), player level from points
+  adaptive.js                      tier ladder: choice below the top tier, keypad at the top; 5 in a row up, 3 of 5 missed down
+  session.js                       ~80% chosen lesson, ~20% review of earlier lessons weighted by weak skills
+  stats.js                         parent-view aggregations
+app/src/db.js                    Dexie tables: learners, sessions, attempts, progress, settings; backup/restore/reset
+app/src/speech.js                read-aloud (speechSynthesis, Arabic voice; hidden if the device has none)
+app/src/sound.js                 synthesized sound effects per theme (no audio files)
+app/src/theme.css                tokens per theme: neutral, and "stitch" (colours and shapes only, no character art)
+```
+
+### Behaviour notes
+
+- **Lessons shown:** a lesson appears on the map only if the app can render everything it generates. `curriculum.js` samples each tier and checks every `visual.kind` against the renderer registry; fraction displays are not rendered yet. Grade 3 semester 1 is fully playable (42 lessons). Other terms can be chosen in parent settings, but their lessons that need semester 2 visuals stay hidden until those renderers exist.
+- **Answering:**
+  - A child gets 3 tries. A wrong choice is greyed out, and after the third miss the answer is shown.
+  - Every response goes through `recordResponse`. The attempt row is written as soon as the exercise is shown, updated on each response, and closed as `correct`, `gave_up` or (on leaving mid-exercise) `skipped`.
+- **Keypad tier:** single-tier lessons get two steps (choice, then keypad), so a child never starts on the keypad. The keypad is used only when the answer is a plain number; comparisons, orderings and yes/no answers stay multiple choice.
+- **Session length:** equals the daily goal (5–30).
+- **Data stays on the phone:**
+  - "حفظ نسخة احتياطية" exports every table as JSON. On iOS this goes through the share sheet, e.g. Save to Files.
+  - A restore replaces everything, including the parent PIN, with the backup's contents.
+- **Parent PIN:** a child lock, not security.
