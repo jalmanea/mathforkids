@@ -1,0 +1,4997 @@
+{
+  "schema_version": 1,
+  "subject": "الرياضيات",
+  "country": "SA",
+  "authority": "وزارة التعليم - المملكة العربية السعودية",
+  "edition": "1447/1448 AH, two-semester edition (grade 3 part 1: 1448 print; grade 3 part 2: 1447 print; grade 2 part 1: legal deposit 1446, used from 1447)",
+  "notes": "Unit ids use the textbook chapter number (الفصل), which continues across semesters (grade 2 semester 2 starts at chapter 7). Lesson 'ref' is the textbook lesson number. Student-facing strings (titles, objectives) use Arabic-Indic digits. See curriculum/SOURCES.md for sources and verification status.",
+  "grades": [
+    {
+      "grade": 2,
+      "title": "الصف الثاني الابتدائي",
+      "semesters": [
+        {
+          "semester": 1,
+          "title": "الفصل الدراسي الأول",
+          "units": [
+            {
+              "id": "g2-s1-u1",
+              "number": 1,
+              "title": "القيمة المنزلية حتى ١٠٠ والأنماط",
+              "lessons": [
+                {
+                  "id": "g2-s1-u1-l1",
+                  "ref": "1-1",
+                  "type": "lesson",
+                  "title": "الآحاد والعشرات",
+                  "objective": "تكوين عدد من رقمين من عشرات وآحاد وتحليله إليها",
+                  "generator": "num.place_value",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "range": [10, 50],
+                        "ask": ["from_places"]
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "range": [10, 99],
+                        "ask": ["from_places", "expanded"]
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "g2-s1-u1-l2",
+                  "ref": "1-2",
+                  "type": "lesson",
+                  "title": "القيمة المنزلية للأعداد حتى ١٠٠",
+                  "objective": "تحديد منزلة الرقم وقيمته في عدد حتى ١٠٠",
+                  "generator": "num.place_value",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "range": [10, 99],
+                        "ask": ["value"]
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "range": [10, 99],
+                        "ask": ["value", "place", "expanded"]
+                      }
+                    },
+                    "3": {
+                      "params": {
+                        "range": [10, 100],
+                        "ask": ["value", "place", "expanded", "from_places"]
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "g2-s1-u1-l3",
+                  "ref": "1-3",
+                  "type": "problem_solving",
+                  "title": "أحل المسألة: أستعمل الاستدلال المنطقي",
+                  "objective": "استعمال الاستدلال المنطقي لتحديد عدد من رقمين من خلال أوصاف رقميه",
+                  "generator": "word.logic_number",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "variants": ["diff"]
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "variants": ["diff", "sum"]
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "g2-s1-u1-l4",
+                  "ref": "1-4",
+                  "type": "lesson",
+                  "title": "قراءة الأعداد وكتابتها",
+                  "objective": "قراءة الأعداد حتى ١٠٠ وكتابتها بالأرقام والكلمات",
+                  "generator": "num.read_write",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "range": [0, 20]
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "range": [0, 99]
+                      }
+                    },
+                    "3": {
+                      "params": {
+                        "range": [20, 100]
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "g2-s1-u1-l5",
+                  "ref": "1-5",
+                  "type": "lesson",
+                  "title": "تقدير الكميات",
+                  "objective": "تقدير عدد الأشياء في مجموعة باستعمال مرجع من ١٠ أشياء",
+                  "generator": "num.estimate_quantity",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "range": [10, 40]
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "range": [20, 90]
+                      }
+                    }
+                  },
+                  "verified": {
+                    "source": "G2 part 1 pp. 19–20",
+                    "note": "Benchmark of 10; answers are multiples of ten."
+                  }
+                },
+                {
+                  "id": "g2-s1-u1-l6",
+                  "ref": "1-6",
+                  "type": "lesson",
+                  "title": "ترتيب الأعداد",
+                  "objective": "ترتيب الأعداد حتى ١٠٠ تصاعديًا وتنازليًا",
+                  "generator": "num.order",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "range": [0, 50],
+                        "count": 3
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "range": [0, 100],
+                        "count": 3
+                      }
+                    },
+                    "3": {
+                      "params": {
+                        "range": [0, 100],
+                        "count": 4
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "g2-s1-u1-l7",
+                  "ref": "1-7",
+                  "type": "lesson",
+                  "title": "مقارنة الأعداد",
+                  "objective": "مقارنة عددين حتى ١٠٠ باستعمال الرموز > و< و=",
+                  "generator": "num.compare",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "range": [0, 50]
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "range": [0, 100]
+                      }
+                    },
+                    "3": {
+                      "params": {
+                        "range": [10, 99],
+                        "close": true
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "g2-s1-u1-l8",
+                  "ref": "1-8",
+                  "type": "lesson",
+                  "title": "الأنماط",
+                  "objective": "إكمال أنماط العد القفزي بالاثنينات والخمسات والعشرات",
+                  "generator": "num.pattern",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "start": [0, 20],
+                        "steps": [2, 5, 10],
+                        "directions": ["up"],
+                        "max": 100
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "start": [0, 60],
+                        "steps": [2, 5, 10],
+                        "directions": ["up", "down"],
+                        "max": 100
+                      }
+                    },
+                    "3": {
+                      "params": {
+                        "start": [0, 60],
+                        "steps": [2, 3, 4, 5, 10],
+                        "directions": ["up", "down"],
+                        "max": 100
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "g2-s1-u1-l9",
+                  "ref": "1-9",
+                  "type": "lesson",
+                  "title": "الأنماط على لوحة المئة",
+                  "objective": "اكتشاف الأنماط على لوحة المئة (إضافة ١ أو ١٠)",
+                  "generator": "num.pattern",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "start": [1, 50],
+                        "steps": [1, 10],
+                        "directions": ["up"],
+                        "max": 100
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "start": [1, 90],
+                        "steps": [1, 10],
+                        "directions": ["up", "down"],
+                        "max": 100
+                      }
+                    },
+                    "3": {
+                      "params": {
+                        "start": [1, 60],
+                        "steps": [9, 11],
+                        "directions": ["up", "down"],
+                        "max": 100
+                      }
+                    }
+                  },
+                  "flags": [
+                    {
+                      "kind": "constraint_inferred",
+                      "note": "Difficulty 3 uses hundred-chart diagonals (+9, +11); confirm the lesson goes beyond rows/columns."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "g2-s1-u2",
+              "number": 2,
+              "title": "طرائق الجمع",
+              "lessons": [
+                {
+                  "id": "g2-s1-u2-l1",
+                  "ref": "2-1",
+                  "type": "lesson",
+                  "title": "خصائص الجمع",
+                  "objective": "استعمال خاصيتي الإبدال والصفر في الجمع",
+                  "generator": "add.properties",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "properties": ["identity", "commutative"],
+                        "range": [1, 9]
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "properties": ["identity", "commutative"],
+                        "range": [1, 18]
+                      }
+                    }
+                  },
+                  "flags": [
+                    {
+                      "kind": "constraint_inferred",
+                      "note": "Which properties are named in grade 2 (order/zero) is not verified on the page."
+                    }
+                  ]
+                },
+                {
+                  "id": "g2-s1-u2-l2",
+                  "ref": "2-2",
+                  "type": "lesson",
+                  "title": "الجمع بالعد التصاعدي",
+                  "objective": "الجمع بالعد التصاعدي ١ أو ٢ أو ٣",
+                  "generator": "add.facts",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "mode": "count_on",
+                        "max_addend": 9,
+                        "max_sum": 12
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "mode": "count_on",
+                        "max_addend": 17,
+                        "max_sum": 20
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "g2-s1-u2-l3",
+                  "ref": "2-3",
+                  "type": "problem_solving",
+                  "title": "أحل المسألة: أمثّلها",
+                  "objective": "حل مسائل جمع وطرح بتمثيلها",
+                  "generator": "word.add_sub",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "range": [1, 10],
+                        "kinds": ["join", "separate"],
+                        "max": 20
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "range": [2, 18],
+                        "kinds": ["join", "separate", "compare"],
+                        "max": 20
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "g2-s1-u2-l4",
+                  "ref": "2-4",
+                  "type": "lesson",
+                  "title": "جمع العدد ونفسه",
+                  "objective": "حقائق جمع العدد ونفسه حتى ١٠ + ١٠",
+                  "generator": "add.facts",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "mode": "doubles",
+                        "max_addend": 5
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "mode": "doubles",
+                        "max_addend": 9
+                      }
+                    },
+                    "3": {
+                      "params": {
+                        "mode": "doubles",
+                        "max_addend": 10,
+                        "max_sum": 20
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "g2-s1-u2-l5",
+                  "ref": "2-5",
+                  "type": "lesson",
+                  "title": "جمع العدد ونفسه مضافًا إليه ١ أو مطروحًا منه ١",
+                  "objective": "استعمال حقائق العدد ونفسه لجمع عددين متتاليين",
+                  "generator": "add.facts",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "mode": "near_doubles",
+                        "max_addend": 6
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "mode": "near_doubles",
+                        "max_addend": 10,
+                        "max_sum": 19
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "g2-s1-u2-l6",
+                  "ref": "2-6",
+                  "type": "lesson",
+                  "title": "الجمع بتكوين العشرة",
+                  "objective": "جمع عددين من رقم واحد مجموعهما أكبر من ١٠ بتكوين عشرة",
+                  "generator": "add.facts",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "mode": "make_ten"
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "mode": "make_ten",
+                        "show_step": true
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "g2-s1-u2-l7",
+                  "ref": "2-7",
+                  "type": "lesson",
+                  "title": "جمع ثلاثة أعداد",
+                  "objective": "جمع ثلاثة أعداد من رقم واحد",
+                  "generator": "add.three",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "range": [1, 5],
+                        "max_sum": 15
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "range": [1, 9],
+                        "max_sum": 20
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "g2-s1-u2-l8",
+                  "ref": "2-8",
+                  "type": "investigation",
+                  "title": "استقصاء حل المسألة",
+                  "objective": "اختيار خطة مناسبة لحل مسائل جمع",
+                  "generator": "mix",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "pool": [
+                          {
+                            "generator": "word.add_sub",
+                            "params": {
+                              "range": [1, 10],
+                              "kinds": ["join"],
+                              "max": 20
+                            }
+                          },
+                          {
+                            "generator": "add.three",
+                            "params": {
+                              "range": [1, 9],
+                              "max_sum": 20
+                            }
+                          },
+                          {
+                            "generator": "add.facts",
+                            "params": {
+                              "mode": "any",
+                              "max_addend": 9,
+                              "max_sum": 18
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "id": "g2-s1-u3",
+              "number": 3,
+              "title": "طرائق الطرح",
+              "lessons": [
+                {
+                  "id": "g2-s1-u3-l1",
+                  "ref": "3-1",
+                  "type": "lesson",
+                  "title": "الطرح بالعد التنازلي",
+                  "objective": "الطرح بالعد التنازلي ١ أو ٢ أو ٣",
+                  "generator": "sub.facts",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "mode": "count_back",
+                        "max_minuend": 12
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "mode": "count_back",
+                        "max_minuend": 20
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "g2-s1-u3-l2",
+                  "ref": "3-2",
+                  "type": "lesson",
+                  "title": "طرح الصفر وطرح الكل",
+                  "objective": "طرح الصفر من عدد وطرح العدد من نفسه",
+                  "generator": "sub.facts",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "mode": "zero_all",
+                        "max_minuend": 9
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "mode": "zero_all",
+                        "max_minuend": 20
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "g2-s1-u3-l3",
+                  "ref": "3-3",
+                  "type": "lesson",
+                  "title": "الطرح باستعمال حقائق جمع العدد ونفسه",
+                  "objective": "استعمال حقائق العدد ونفسه في الطرح",
+                  "generator": "sub.facts",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "mode": "doubles",
+                        "max_minuend": 10
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "mode": "doubles",
+                        "max_minuend": 20
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "g2-s1-u3-l4",
+                  "ref": "3-4",
+                  "type": "problem_solving",
+                  "title": "أحل المسألة: أخمّن وأتحقق",
+                  "objective": "استعمال التخمين والتحقق لإيجاد عددين من مجموعهما والفرق بينهما",
+                  "generator": "word.guess_check",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "max_sum": 10
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "max_sum": 20
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "g2-s1-u3-l5",
+                  "ref": "3-5",
+                  "type": "lesson",
+                  "title": "العلاقة بين الجمع والطرح",
+                  "objective": "استعمال حقائق الجمع لإيجاد حقائق الطرح المرتبطة بها",
+                  "generator": "sub.related",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "max_sum": 10
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "max_sum": 18
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "g2-s1-u3-l6",
+                  "ref": "3-6",
+                  "type": "lesson",
+                  "title": "الأعداد المفقودة",
+                  "objective": "إيجاد العدد المفقود في جملة جمع أو طرح",
+                  "generator": "sub.missing",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "max": 10
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "max": 20
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "g2-s1-u3-l7",
+                  "ref": "3-7",
+                  "type": "lesson",
+                  "title": "الحقائق المترابطة",
+                  "objective": "كتابة حقائق الجمع والطرح المترابطة (عائلة الحقائق)",
+                  "generator": "mix",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "pool": [
+                          {
+                            "generator": "sub.related",
+                            "params": {
+                              "max_sum": 10
+                            }
+                          },
+                          {
+                            "generator": "sub.missing",
+                            "params": {
+                              "max": 10
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "pool": [
+                          {
+                            "generator": "sub.related",
+                            "params": {
+                              "max_sum": 18
+                            }
+                          },
+                          {
+                            "generator": "sub.missing",
+                            "params": {
+                              "max": 18
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "flags": [
+                    {
+                      "kind": "source_conflict",
+                      "note": "Title spelled 'الحقائق المترابطة' (haqibati/wajibati) vs 'الحقائق المرتبطة' (mnhaji)."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "g2-s1-u4",
+              "number": 4,
+              "title": "تمثيل البيانات وقراءتها",
+              "lessons": [
+                {
+                  "id": "g2-s1-u4-l1",
+                  "ref": "4-1",
+                  "type": "lesson",
+                  "title": "جدول الإشارات",
+                  "objective": "قراءة البيانات في جدول الإشارات",
+                  "generator": "data.tally",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "max": 10,
+                        "ask": ["value"]
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "max": 15,
+                        "ask": ["value", "most", "least", "difference"]
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "g2-s1-u4-l2",
+                  "ref": "4-2",
+                  "type": "lesson",
+                  "title": "التمثيل بالصور",
+                  "objective": "تمثيل البيانات بالصور (كل صورة تمثل شيئًا واحدًا)",
+                  "generator": "data.pictograph",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "max": 8,
+                        "keys": [1],
+                        "ask": ["value", "most", "least"]
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "g2-s1-u4-l3",
+                  "ref": "4-3",
+                  "type": "lesson",
+                  "title": "قراءة البيانات الممثلة بالصور",
+                  "objective": "قراءة التمثيل بالصور وتفسيره",
+                  "generator": "data.pictograph",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "max": 10,
+                        "keys": [1],
+                        "ask": ["value", "most", "least"]
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "max": 10,
+                        "keys": [1],
+                        "ask": ["difference", "total"]
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "g2-s1-u4-l4",
+                  "ref": "4-4",
+                  "type": "problem_solving",
+                  "title": "أحل المسألة: أنشئ جدولًا",
+                  "objective": "إنشاء جدول لحل مسألة فيها نمط ثابت (عد قفزي)",
+                  "generator": "word.make_table",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "rates": [2, 5, 10],
+                        "days": [2, 5],
+                        "ask": ["total"],
+                        "hint": "أنشئ جدولًا"
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "rates": [2, 3, 5, 10],
+                        "days": [3, 6],
+                        "ask": ["total", "days"],
+                        "hint": "أنشئ جدولًا"
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "g2-s1-u4-l5",
+                  "ref": "4-5",
+                  "type": "lesson",
+                  "title": "التمثيل بالأعمدة",
+                  "objective": "تمثيل البيانات بالأعمدة",
+                  "generator": "data.bar_graph",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "max": 10,
+                        "scale": [1],
+                        "ask": ["value", "most", "least"]
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "g2-s1-u4-l6",
+                  "ref": "4-6",
+                  "type": "lesson",
+                  "title": "قراءة البيانات الممثلة بالأعمدة",
+                  "objective": "قراءة التمثيل بالأعمدة وتفسيره",
+                  "generator": "data.bar_graph",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "max": 10,
+                        "scale": [1],
+                        "ask": ["value", "most", "least", "difference"]
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "max": 20,
+                        "scale": [2],
+                        "ask": ["value", "difference", "total"]
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "g2-s1-u4-l7",
+                  "ref": "4-7",
+                  "type": "lesson",
+                  "title": "الحدث الأكيد والحدث المستحيل",
+                  "objective": "وصف الحدث بأنه أكيد أو مستحيل",
+                  "generator": "data.chance",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "mode": "certain_impossible",
+                        "allow_possible": false,
+                        "terms": {
+                          "certain": "أكيد",
+                          "possible": "ممكن",
+                          "impossible": "مستحيل",
+                          "more": "أكثر إمكانية",
+                          "less": "أقل إمكانية"
+                        }
+                      }
+                    }
+                  },
+                  "verified": {
+                    "source": "G2 part 1 p. 101",
+                    "note": "Answer words أكيد / مستحيل."
+                  }
+                },
+                {
+                  "id": "g2-s1-u4-l8",
+                  "ref": "4-8",
+                  "type": "lesson",
+                  "title": "أكثر إمكانية - أقل إمكانية",
+                  "objective": "مقارنة إمكانية وقوع حدثين",
+                  "generator": "data.chance",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "mode": "more_less_likely",
+                        "terms": {
+                          "certain": "أكيد",
+                          "possible": "ممكن",
+                          "impossible": "مستحيل",
+                          "more": "أكثر إمكانية",
+                          "less": "أقل إمكانية"
+                        }
+                      }
+                    }
+                  },
+                  "verified": {
+                    "source": "G2 part 1 pp. 102–103",
+                    "note": "Answer words أكثر إمكانية / أقل إمكانية."
+                  }
+                }
+              ]
+            },
+            {
+              "id": "g2-s1-u5",
+              "number": 5,
+              "title": "جمع الأعداد المكونة من رقمين",
+              "lessons": [
+                {
+                  "id": "g2-s1-u5-l1",
+                  "ref": "5-1",
+                  "type": "lesson",
+                  "title": "جمع العشرات",
+                  "objective": "جمع العشرات الكاملة",
+                  "generator": "add.column",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "a": [10, 80],
+                        "b": [10, 80],
+                        "multiple_of": 10,
+                        "regroup": "any",
+                        "max_sum": 90
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "a": [10, 90],
+                        "b": [10, 90],
+                        "multiple_of": 10,
+                        "regroup": "any",
+                        "max_sum": 100,
+                        "missing_rate": 0.3
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "g2-s1-u5-l2",
+                  "ref": "5-2",
+                  "type": "lesson",
+                  "title": "الجمع بالعد التصاعدي",
+                  "objective": "العد التصاعدي بالآحاد والعشرات لجمع عدد إلى عدد من رقمين",
+                  "generator": "add.column",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "a": [10, 89],
+                        "b_values": [1, 2, 3],
+                        "regroup": "none",
+                        "max_sum": 99
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "a": [10, 89],
+                        "b_values": [1, 2, 3, 10, 20, 30],
+                        "regroup": "any",
+                        "max_sum": 99
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "g2-s1-u5-l3",
+                  "ref": "5-3",
+                  "type": "problem_solving",
+                  "title": "أحل المسألة: أحل عكسيًا",
+                  "objective": "الحل العكسي لإيجاد الكمية في البداية",
+                  "generator": "word.work_backward",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "range": [10, 50],
+                        "max": 60
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "range": [20, 80],
+                        "max": 99
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "g2-s1-u5-l4",
+                  "ref": "5-4",
+                  "type": "lesson",
+                  "title": "جمع عدد من رقمين إلى عدد من رقم واحد أو رقمين",
+                  "objective": "الجمع دون إعادة التجميع",
+                  "generator": "add.column",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "a": [10, 89],
+                        "b": [1, 9],
+                        "regroup": "none"
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "a": [10, 89],
+                        "b": [10, 89],
+                        "regroup": "none",
+                        "max_sum": 99
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "g2-s1-u5-l5",
+                  "ref": "5-5",
+                  "type": "lesson",
+                  "title": "الجمع بإعادة التجميع",
+                  "objective": "فهم إعادة تجميع ١٠ آحاد إلى عشرة واحدة",
+                  "generator": "add.column",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "a": [10, 89],
+                        "b": [2, 9],
+                        "regroup": "required",
+                        "max_sum": 99
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "g2-s1-u5-l6",
+                  "ref": "5-6",
+                  "type": "lesson",
+                  "title": "جمع عدد من رقمين إلى عدد من رقم واحد بإعادة التجميع",
+                  "objective": "جمع عدد من رقمين وعدد من رقم واحد مع إعادة التجميع",
+                  "generator": "add.column",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "a": [10, 49],
+                        "b": [2, 9],
+                        "regroup": "required",
+                        "max_sum": 59
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "a": [10, 91],
+                        "b": [2, 9],
+                        "regroup": "required",
+                        "max_sum": 100
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "g2-s1-u5-l7",
+                  "ref": "5-7",
+                  "type": "lesson",
+                  "title": "جمع عددين مكونين من رقمين بإعادة التجميع",
+                  "objective": "جمع عددين من رقمين مع إعادة التجميع",
+                  "generator": "add.column",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "a": [10, 60],
+                        "b": [10, 39],
+                        "regroup": "required",
+                        "max_sum": 99
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "a": [10, 89],
+                        "b": [10, 89],
+                        "regroup": "required",
+                        "max_sum": 100
+                      }
+                    },
+                    "3": {
+                      "params": {
+                        "a": [10, 89],
+                        "b": [10, 89],
+                        "regroup": "any",
+                        "max_sum": 100,
+                        "missing_rate": 0.4
+                      }
+                    }
+                  },
+                  "flags": [
+                    {
+                      "kind": "source_conflict",
+                      "note": "wajibati's list omits 5-7; mnhaji's index and the PDF lesson count (10) include it."
+                    }
+                  ]
+                },
+                {
+                  "id": "g2-s1-u5-l8",
+                  "ref": "5-8",
+                  "type": "lesson",
+                  "title": "تقدير ناتج الجمع",
+                  "objective": "تقدير ناتج الجمع بالتقريب إلى أقرب عشرة",
+                  "generator": "add.estimate",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "a": [11, 49],
+                        "b": [11, 49],
+                        "to": 10,
+                        "max_sum": 100
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "a": [11, 79],
+                        "b": [11, 79],
+                        "to": 10,
+                        "max_sum": 100
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "g2-s1-u5-l9",
+                  "ref": "5-9",
+                  "type": "lesson",
+                  "title": "جمع ثلاثة أعداد كل منها مكون من رقمين",
+                  "objective": "جمع ثلاثة أعداد من رقمين",
+                  "generator": "add.three",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "range": [10, 30],
+                        "max_sum": 99,
+                        "regroup": "none"
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "range": [1, 45],
+                        "max_sum": 100,
+                        "regroup": "any"
+                      }
+                    }
+                  },
+                  "verified": {
+                    "source": "G2 part 1 pp. 128–129",
+                    "note": "Sums seen 36–91, never above 100; some addends are one-digit."
+                  }
+                },
+                {
+                  "id": "g2-s1-u5-l10",
+                  "ref": "5-10",
+                  "type": "investigation",
+                  "title": "استقصاء حل المسألة",
+                  "objective": "اختيار خطة مناسبة لحل مسائل جمع الأعداد من رقمين",
+                  "generator": "mix",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "pool": [
+                          {
+                            "generator": "word.add_sub",
+                            "params": {
+                              "range": [10, 50],
+                              "kinds": ["join"],
+                              "max": 99
+                            }
+                          },
+                          {
+                            "generator": "word.work_backward",
+                            "params": {
+                              "range": [10, 50],
+                              "max": 80
+                            }
+                          },
+                          {
+                            "generator": "add.column",
+                            "params": {
+                              "a": [10, 89],
+                              "b": [10, 89],
+                              "regroup": "any",
+                              "max_sum": 100
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "id": "g2-s1-u6",
+              "number": 6,
+              "title": "طرح الأعداد المكونة من رقمين",
+              "lessons": [
+                {
+                  "id": "g2-s1-u6-l1",
+                  "ref": "6-1",
+                  "type": "lesson",
+                  "title": "طرح العشرات",
+                  "objective": "طرح العشرات الكاملة",
+                  "generator": "sub.column",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "a": [20, 90],
+                        "b": [10, 80],
+                        "multiple_of": 10,
+                        "regroup": "none"
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "g2-s1-u6-l2",
+                  "ref": "6-2",
+                  "type": "lesson",
+                  "title": "الطرح بالعد التنازلي",
+                  "objective": "العد التنازلي بالآحاد والعشرات لطرح عدد من عدد من رقمين",
+                  "generator": "sub.column",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "a": [20, 99],
+                        "b_values": [1, 2, 3],
+                        "regroup": "none"
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "a": [20, 99],
+                        "b_values": [1, 2, 3, 10, 20, 30],
+                        "regroup": "any"
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "g2-s1-u6-l3",
+                  "ref": "6-3",
+                  "type": "lesson",
+                  "title": "الطرح بدون إعادة التجميع",
+                  "objective": "طرح عددين من رقمين دون إعادة التجميع",
+                  "generator": "sub.column",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "a": [20, 99],
+                        "b": [1, 9],
+                        "regroup": "none"
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "a": [20, 99],
+                        "b": [10, 89],
+                        "regroup": "none"
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "g2-s1-u6-l4",
+                  "ref": "6-4",
+                  "type": "lesson",
+                  "title": "الطرح بإعادة التجميع",
+                  "objective": "فهم إعادة تجميع عشرة إلى ١٠ آحاد عند الطرح",
+                  "generator": "sub.column",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "a": [20, 99],
+                        "b": [2, 9],
+                        "regroup": "required"
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "a": [20, 99],
+                        "b": [11, 89],
+                        "regroup": "required"
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "g2-s1-u6-l5",
+                  "ref": "6-5",
+                  "type": "problem_solving",
+                  "title": "أحل المسألة: أكتب جملة عددية",
+                  "objective": "كتابة جملة عددية مناسبة لحل مسألة",
+                  "generator": "word.number_sentence",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "range": [10, 50],
+                        "kinds": ["join", "separate"],
+                        "max": 99
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "range": [10, 99],
+                        "kinds": ["join", "separate", "compare"],
+                        "max": 100
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "g2-s1-u6-l6",
+                  "ref": "6-6",
+                  "type": "lesson",
+                  "title": "طرح عدد مكون من رقم واحد من عدد مكون من رقمين",
+                  "objective": "طرح عدد من رقم واحد من عدد من رقمين مع إعادة التجميع أو دونها",
+                  "generator": "sub.column",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "a": [20, 99],
+                        "b": [1, 9],
+                        "regroup": "any"
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "a": [20, 99],
+                        "b": [2, 9],
+                        "regroup": "required"
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "g2-s1-u6-l7",
+                  "ref": "6-7",
+                  "type": "lesson",
+                  "title": "طرح عددين كل منهما مكون من رقمين",
+                  "objective": "طرح عددين من رقمين مع إعادة التجميع أو دونها",
+                  "generator": "sub.column",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "a": [20, 99],
+                        "b": [10, 89],
+                        "regroup": "any"
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "a": [20, 99],
+                        "b": [11, 89],
+                        "regroup": "required"
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "g2-s1-u6-l8",
+                  "ref": "6-8",
+                  "type": "lesson",
+                  "title": "التحقق من صحة ناتج الطرح",
+                  "objective": "التحقق من ناتج الطرح باستعمال الجمع",
+                  "generator": "sub.check",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "a": [20, 99],
+                        "b": [10, 89]
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "g2-s1-u6-l9",
+                  "ref": "6-9",
+                  "type": "lesson",
+                  "title": "تقدير ناتج الطرح",
+                  "objective": "تقدير ناتج الطرح بالتقريب إلى أقرب عشرة",
+                  "generator": "sub.estimate",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "a": [21, 99],
+                        "b": [11, 89],
+                        "to": 10
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "semester": 2,
+          "title": "الفصل الدراسي الثاني",
+          "units": [
+            {
+              "id": "g2-s2-u7",
+              "number": 7,
+              "title": "القياس: النقود والزمن",
+              "lessons": [
+                {
+                  "id": "g2-s2-u7-l1",
+                  "ref": "7-1",
+                  "type": "lesson",
+                  "title": "النقود (ريال، ريالان، ٥ ريالات، ١٠ ريالات، ٥٠ ريالًا)",
+                  "objective": "التعرف على فئات الريال وإيجاد قيمة مجموعة منها",
+                  "generator": "money.count",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "denominations": [1, 2, 5],
+                        "count": [2, 4],
+                        "max_total": 20
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "denominations": [1, 2, 5, 10],
+                        "count": [2, 5],
+                        "max_total": 50
+                      }
+                    },
+                    "3": {
+                      "params": {
+                        "denominations": [1, 2, 5, 10, 50],
+                        "count": [2, 5],
+                        "max_total": 99
+                      }
+                    }
+                  },
+                  "verified": {
+                    "source": "G2 part 2 pp. 10–15",
+                    "note": "1 and 2 riyal are coins; 5/10/50/100 are notes; no هللة in grade 2."
+                  }
+                },
+                {
+                  "id": "g2-s2-u7-l2",
+                  "ref": "7-2",
+                  "type": "lesson",
+                  "title": "عد النقود",
+                  "objective": "عد مجموعة من النقود بدءًا بالفئة الأكبر",
+                  "generator": "money.count",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "denominations": [1, 5, 10],
+                        "count": [3, 6],
+                        "max_total": 60
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "denominations": [1, 2, 5, 10, 50],
+                        "count": [3, 7],
+                        "max_total": 99
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "g2-s2-u7-l3",
+                  "ref": "7-3",
+                  "type": "lesson",
+                  "title": "النقود (١٠٠ ريال)",
+                  "objective": "التعرف على فئة ١٠٠ ريال وتكوينها من فئات أصغر",
+                  "generator": "money.count",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "denominations": [10, 50, 100],
+                        "count": [1, 3],
+                        "max_total": 100
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "denominations": [5, 10, 50],
+                        "count": [2, 5],
+                        "max_total": 100
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "g2-s2-u7-l4",
+                  "ref": "7-4",
+                  "type": "lesson",
+                  "title": "ترتيب الأعمال اليومية",
+                  "objective": "ترتيب الأحداث اليومية (قبل، بعد)",
+                  "generator": "time.sequence",
+                  "difficulties": {
+                    "1": {
+                      "params": {}
+                    }
+                  }
+                },
+                {
+                  "id": "g2-s2-u7-l5",
+                  "ref": "7-5",
+                  "type": "lesson",
+                  "title": "الوقت بالساعات الكاملة",
+                  "objective": "قراءة الوقت بالساعة الكاملة",
+                  "generator": "time.read_clock",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "minute_step": 60,
+                        "format": "words"
+                      }
+                    }
+                  },
+                  "verified": {
+                    "source": "G2 part 2 p. 18",
+                    "note": "Read as «الساعة الثالثة»."
+                  }
+                },
+                {
+                  "id": "g2-s2-u7-l6",
+                  "ref": "7-6",
+                  "type": "lesson",
+                  "title": "الوقت بنصف الساعة",
+                  "objective": "قراءة الوقت بنصف الساعة",
+                  "generator": "time.read_clock",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "minute_step": 30,
+                        "format": "words"
+                      }
+                    }
+                  },
+                  "verified": {
+                    "source": "G2 part 2 p. 22",
+                    "note": "Read as «الساعة الرابعة والنصف»."
+                  }
+                },
+                {
+                  "id": "g2-s2-u7-l7",
+                  "ref": "7-7",
+                  "type": "lesson",
+                  "title": "تقدير الزمن",
+                  "objective": "تقدير المدة التي يستغرقها نشاط ما",
+                  "generator": "time.estimate",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "units": ["دقيقة", "ساعة"]
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "units": ["دقيقة", "ساعة", "يوم"]
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "g2-s2-u7-l8",
+                  "ref": "7-8",
+                  "type": "lesson",
+                  "title": "الوقت بربع الساعة",
+                  "objective": "قراءة الوقت بربع الساعة",
+                  "generator": "time.read_clock",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "minute_step": 15,
+                        "format": "words"
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "minute_step": 15,
+                        "format": "both"
+                      }
+                    }
+                  },
+                  "verified": {
+                    "source": "G2 part 2 p. 27",
+                    "note": "Words («والربع», «إلا الربع») paired with digital h:mm."
+                  }
+                },
+                {
+                  "id": "g2-s2-u7-l9",
+                  "ref": "7-9",
+                  "type": "problem_solving",
+                  "title": "أحل المسألة: أبحث عن نمط",
+                  "objective": "إيجاد نمط في مواعيد متتالية",
+                  "generator": "word.find_pattern",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "context": "time",
+                        "steps": [30, 60]
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "context": "time",
+                        "steps": [15, 30]
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "g2-s2-u7-l10",
+                  "ref": "7-10",
+                  "type": "lesson",
+                  "title": "الوقت لأقرب ٥ دقائق",
+                  "objective": "قراءة الوقت لأقرب ٥ دقائق",
+                  "generator": "time.read_clock",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "minute_step": 5,
+                        "format": "digital"
+                      }
+                    }
+                  },
+                  "verified": {
+                    "source": "G2 part 2 pp. 31–32",
+                    "note": "Digital h:mm (e.g. ٩:٤٠)."
+                  }
+                }
+              ]
+            },
+            {
+              "id": "g2-s2-u8",
+              "number": 8,
+              "title": "الكسور",
+              "lessons": [
+                {
+                  "id": "g2-s2-u8-l1",
+                  "ref": "8-1",
+                  "type": "lesson",
+                  "title": "كسور الوحدة",
+                  "objective": "التعرف على كسور الوحدة وتمثيلها",
+                  "generator": "frac.part_of_whole",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "denominators": [2, 3, 4],
+                        "numerators": "unit",
+                        "models": ["circle", "rect", "strip"]
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "denominators": [2, 3, 4, 5, 6, 8, 10],
+                        "numerators": "unit",
+                        "models": ["circle", "rect", "strip"]
+                      }
+                    },
+                    "3": {
+                      "params": {
+                        "denominators": [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+                        "numerators": "unit",
+                        "models": ["circle", "rect", "strip"]
+                      }
+                    }
+                  },
+                  "verified": {
+                    "source": "G2 part 2 pp. 40–41",
+                    "note": "Denominators 2–11 seen; area models only."
+                  }
+                },
+                {
+                  "id": "g2-s2-u8-l2",
+                  "ref": "8-2",
+                  "type": "lesson",
+                  "title": "الكسور الدالة على أكثر من جزء",
+                  "objective": "التعرف على كسور بسطها أكبر من ١",
+                  "generator": "frac.part_of_whole",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "denominators": [3, 4],
+                        "numerators": "any",
+                        "models": ["circle", "rect", "strip"]
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "denominators": [3, 4, 5, 6, 8, 10],
+                        "numerators": "any",
+                        "models": ["circle", "rect", "strip"]
+                      }
+                    },
+                    "3": {
+                      "params": {
+                        "denominators": [3, 4, 5, 6, 7, 8, 9, 10, 12],
+                        "numerators": "any",
+                        "models": ["circle", "rect", "strip"]
+                      }
+                    }
+                  },
+                  "verified": {
+                    "source": "G2 part 2 pp. 42–43",
+                    "note": "e.g. ٣/٤، ٥/٦، ٤/٧، ٧/١٠، ٣/١٢."
+                  }
+                },
+                {
+                  "id": "g2-s2-u8-l3",
+                  "ref": "8-3",
+                  "type": "problem_solving",
+                  "title": "أحل المسألة: أرسم صورة",
+                  "objective": "رسم صورة لحل مسائل الكسور",
+                  "generator": "word.draw_picture_fraction",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "denominators": [2, 3, 4],
+                        "ask": ["eaten", "left"]
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "denominators": [3, 4, 5, 6, 8],
+                        "ask": ["eaten", "left"]
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "g2-s2-u8-l4",
+                  "ref": "8-4",
+                  "type": "lesson",
+                  "title": "الكسور المساوية للواحد",
+                  "objective": "التعرف على الكسور التي تساوي الواحد",
+                  "generator": "frac.equal_one",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "denominators": [2, 3, 4]
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "denominators": [2, 4, 5, 8, 9, 10]
+                      }
+                    }
+                  },
+                  "verified": {
+                    "source": "G2 part 2 pp. 46–47",
+                    "note": "Pick the fraction equal to 1; denominators 2–10."
+                  }
+                },
+                {
+                  "id": "g2-s2-u8-l5",
+                  "ref": "8-5",
+                  "type": "lesson",
+                  "title": "مقارنة الكسور",
+                  "objective": "مقارنة كسرين باستعمال النماذج",
+                  "generator": "frac.compare",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "denominators": [2, 3, 4],
+                        "modes": ["unit"]
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "denominators": [2, 3, 4, 5, 6, 8, 10, 12],
+                        "modes": ["unit"]
+                      }
+                    }
+                  },
+                  "verified": {
+                    "source": "G2 part 2 pp. 50–51",
+                    "note": "Unit fractions only («أقارن بين كسري وحدة»)."
+                  }
+                },
+                {
+                  "id": "g2-s2-u8-l6",
+                  "ref": "8-6",
+                  "type": "lesson",
+                  "title": "الكسور كأجزاء من مجموعة",
+                  "objective": "التعبير عن جزء من مجموعة بكسر",
+                  "generator": "frac.of_set",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "denominators": [2, 3, 4],
+                        "ask": ["fraction"]
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "denominators": [4, 5, 6, 7, 8, 9],
+                        "ask": ["fraction"]
+                      }
+                    }
+                  },
+                  "verified": {
+                    "source": "G2 part 2 pp. 52–53",
+                    "note": "Set models; denominators 4–9."
+                  }
+                },
+                {
+                  "id": "g2-s2-u8-l7",
+                  "ref": "8-7",
+                  "type": "investigation",
+                  "title": "استقصاء حل المسألة",
+                  "objective": "اختيار خطة مناسبة لحل مسائل الكسور",
+                  "generator": "mix",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "pool": [
+                          {
+                            "generator": "word.draw_picture_fraction",
+                            "params": {
+                              "denominators": [2, 3, 4],
+                              "ask": ["eaten", "left"]
+                            }
+                          },
+                          {
+                            "generator": "frac.of_set",
+                            "params": {
+                              "denominators": [2, 3, 4],
+                              "ask": ["fraction"]
+                            }
+                          },
+                          {
+                            "generator": "frac.compare",
+                            "params": {
+                              "denominators": [2, 3, 4, 6, 8],
+                              "modes": ["unit"]
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "id": "g2-s2-u9",
+              "number": 9,
+              "title": "الأعداد حتى ١٠٠٠",
+              "lessons": [
+                {
+                  "id": "g2-s2-u9-l1",
+                  "ref": "9-1",
+                  "type": "lesson",
+                  "title": "المئات",
+                  "objective": "التعرف على المئات الكاملة حتى ١٠٠٠",
+                  "generator": "num.place_value",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "range": [100, 900],
+                        "multiple_of": 100,
+                        "ask": ["from_places"]
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "range": [100, 990],
+                        "multiple_of": 10,
+                        "ask": ["from_places", "expanded"]
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "g2-s2-u9-l2",
+                  "ref": "9-2",
+                  "type": "lesson",
+                  "title": "الآحاد والعشرات والمئات",
+                  "objective": "تكوين عدد من ثلاثة أرقام من مئات وعشرات وآحاد",
+                  "generator": "num.place_value",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "range": [100, 999],
+                        "ask": ["from_places"]
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "range": [100, 999],
+                        "ask": ["from_places", "expanded"]
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "g2-s2-u9-l3",
+                  "ref": "9-3",
+                  "type": "problem_solving",
+                  "title": "أحل المسألة: أنشئ قائمة",
+                  "objective": "إنشاء قائمة منظمة لإيجاد جميع الاحتمالات",
+                  "generator": "word.make_list",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "mode": "digits",
+                        "digits": [3]
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "mode": "digits",
+                        "digits": [3, 4]
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "g2-s2-u9-l4",
+                  "ref": "9-4",
+                  "type": "lesson",
+                  "title": "القيمة المنزلية للأعداد حتى ١٠٠٠",
+                  "objective": "تحديد منزلة الرقم وقيمته في عدد حتى ١٠٠٠",
+                  "generator": "num.place_value",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "range": [100, 999],
+                        "ask": ["value"]
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "range": [100, 999],
+                        "ask": ["value", "place", "expanded"]
+                      }
+                    },
+                    "3": {
+                      "params": {
+                        "range": [100, 1000],
+                        "ask": ["value", "place", "expanded", "from_places"]
+                      }
+                    }
+                  },
+                  "flags": [
+                    {
+                      "kind": "source_conflict",
+                      "note": "Title 'القيمة المنزلية' vs 'القيم المنزلية' (mnhaji)."
+                    }
+                  ]
+                },
+                {
+                  "id": "g2-s2-u9-l5",
+                  "ref": "9-5",
+                  "type": "lesson",
+                  "title": "قراءة الأعداد حتى ١٠٠٠ وكتابتها",
+                  "objective": "قراءة الأعداد حتى ١٠٠٠ وكتابتها بالأرقام والكلمات",
+                  "generator": "num.read_write",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "range": [100, 500]
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "range": [100, 1000]
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "g2-s2-u9-l6",
+                  "ref": "9-6",
+                  "type": "lesson",
+                  "title": "مقارنة الأعداد",
+                  "objective": "مقارنة الأعداد حتى ١٠٠٠",
+                  "generator": "num.compare",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "range": [100, 999]
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "range": [100, 999],
+                        "close": true
+                      }
+                    },
+                    "3": {
+                      "params": {
+                        "range": [0, 1000]
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "g2-s2-u9-l7",
+                  "ref": "9-7",
+                  "type": "lesson",
+                  "title": "ترتيب الأعداد",
+                  "objective": "ترتيب الأعداد حتى ١٠٠٠",
+                  "generator": "num.order",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "range": [100, 999],
+                        "count": 3
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "range": [100, 1000],
+                        "count": 4
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "g2-s2-u9-l8",
+                  "ref": "9-8",
+                  "type": "lesson",
+                  "title": "الأنماط العددية",
+                  "objective": "إكمال الأنماط العددية بالعشرات والمئات",
+                  "generator": "num.pattern",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "start": [100, 500],
+                        "steps": [10, 100],
+                        "directions": ["up"],
+                        "max": 1000
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "start": [100, 900],
+                        "steps": [5, 10, 50, 100],
+                        "directions": ["up", "down"],
+                        "max": 1000
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "id": "g2-s2-u10",
+              "number": 10,
+              "title": "الأشكال الهندسية",
+              "lessons": [
+                {
+                  "id": "g2-s2-u10-l1",
+                  "ref": "10-1",
+                  "type": "lesson",
+                  "title": "المجسمات",
+                  "objective": "التعرف على المجسمات وخصائصها",
+                  "generator": "geo.solids",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "solids": ["مكعب", "متوازي مستطيلات", "هرم", "أسطوانة", "مخروط", "كرة"],
+                        "ask": ["name"]
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "solids": ["مكعب", "متوازي مستطيلات", "هرم", "أسطوانة", "مخروط", "كرة"],
+                        "ask": ["name", "rolls"]
+                      }
+                    }
+                  },
+                  "verified": {
+                    "source": "G2 part 2 p. 88",
+                    "note": "Solids: كرة، مكعب، هرم، مخروط، أسطوانة، متوازي المستطيلات."
+                  }
+                },
+                {
+                  "id": "g2-s2-u10-l2",
+                  "ref": "10-2",
+                  "type": "lesson",
+                  "title": "الأوجه والأحرف والرؤوس",
+                  "objective": "عد أوجه المجسم وأحرفه ورؤوسه",
+                  "generator": "geo.solids",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "solids": ["مكعب", "متوازي مستطيلات"],
+                        "ask": ["faces", "vertices"]
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "solids": ["مكعب", "متوازي مستطيلات", "هرم"],
+                        "ask": ["faces", "edges", "vertices"]
+                      }
+                    }
+                  },
+                  "flags": [
+                    {
+                      "kind": "ambiguous_skill",
+                      "note": "The book (p. 90) also tabulates faces/edges/vertices for أسطوانة، مخروط، كرة; their conventions were not read, so only polyhedra are asked."
+                    }
+                  ]
+                },
+                {
+                  "id": "g2-s2-u10-l3",
+                  "ref": "10-3",
+                  "type": "lesson",
+                  "title": "الأشكال المستوية",
+                  "objective": "التعرف على الأشكال المستوية وتسميتها",
+                  "generator": "geo.plane",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "shapes": ["دائرة", "مثلث", "مربع", "مستطيل", "متوازي أضلاع", "شكل سداسي", "شبه منحرف"],
+                        "ask": ["identify"]
+                      }
+                    }
+                  },
+                  "verified": {
+                    "source": "G2 part 2 p. 92",
+                    "note": "Shapes: دائرة، مثلث، مربع، مستطيل، متوازي أضلاع، شكل سداسي، شبه منحرف."
+                  }
+                },
+                {
+                  "id": "g2-s2-u10-l4",
+                  "ref": "10-4",
+                  "type": "problem_solving",
+                  "title": "أحل المسألة: أبحث عن نمط",
+                  "objective": "إيجاد الشكل المفقود في نمط هندسي",
+                  "generator": "geo.pattern",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "units": ["AB", "ABC"]
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "units": ["AAB", "ABB", "AABB", "ABC"]
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "g2-s2-u10-l5",
+                  "ref": "10-5",
+                  "type": "lesson",
+                  "title": "الأشكال المستوية: الأضلاع والرؤوس",
+                  "objective": "عد أضلاع الشكل المستوي ورؤوسه",
+                  "generator": "geo.plane",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "shapes": ["دائرة", "مثلث", "مربع", "مستطيل"],
+                        "ask": ["sides", "corners"],
+                        "corner": "vertices"
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "shapes": ["دائرة", "مثلث", "مربع", "مستطيل", "متوازي أضلاع", "شكل سداسي", "شبه منحرف"],
+                        "ask": ["sides", "corners"],
+                        "corner": "vertices"
+                      }
+                    }
+                  },
+                  "verified": {
+                    "source": "G2 part 2 p. 98",
+                    "note": "«٣ أضلاع و٣ رؤوس»; circle has ٠."
+                  }
+                },
+                {
+                  "id": "g2-s2-u10-l6",
+                  "ref": "10-6",
+                  "type": "lesson",
+                  "title": "مقارنة الأشكال الهندسية",
+                  "objective": "مقارنة الأشكال المستوية حسب عدد أضلاعها",
+                  "generator": "geo.compare_shapes",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "shapes": ["مثلث", "مربع", "شكل سداسي", "شبه منحرف", "متوازي أضلاع"]
+                      }
+                    }
+                  },
+                  "flags": [
+                    {
+                      "kind": "ambiguous_skill",
+                      "note": "Comparison criterion in the book (sides/vertices vs. same shape/size) not verified; generator compares number of sides."
+                    }
+                  ]
+                },
+                {
+                  "id": "g2-s2-u10-l7",
+                  "ref": "10-7",
+                  "type": "lesson",
+                  "title": "تكوين الأشكال",
+                  "objective": "تكوين أشكال جديدة من أشكال أخرى",
+                  "generator": "geo.compose",
+                  "difficulties": {
+                    "1": {
+                      "params": {}
+                    }
+                  },
+                  "flags": [
+                    {
+                      "kind": "constraint_inferred",
+                      "note": "Uses standard pattern-block relationships (6 triangles = hexagon, etc.); confirm the book uses these pieces."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "g2-s2-u11",
+              "number": 11,
+              "title": "القياس: الطول والمساحة",
+              "lessons": [
+                {
+                  "id": "g2-s2-u11-l1",
+                  "ref": "11-1",
+                  "type": "lesson",
+                  "title": "وحدات الطول غير القياسية",
+                  "objective": "قياس الطول ومقارنته بوحدات غير قياسية",
+                  "generator": "length.nonstandard",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "range": [2, 10]
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "range": [5, 20]
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "g2-s2-u11-l2",
+                  "ref": "11-2",
+                  "type": "problem_solving",
+                  "title": "أحل المسألة: أخمّن ثم أتحقق",
+                  "objective": "التخمين ثم التحقق لحل مسألة",
+                  "generator": "word.guess_check",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "max_sum": 20
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "max_sum": 50
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "g2-s2-u11-l3",
+                  "ref": "11-3",
+                  "type": "lesson",
+                  "title": "قياس الأطوال بالسنتمترات",
+                  "objective": "قياس الطول بالسنتمتر",
+                  "generator": "length.ruler",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "max_cm": 10,
+                        "offset": false
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "max_cm": 15,
+                        "offset": false
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "g2-s2-u11-l4",
+                  "ref": "11-4",
+                  "type": "lesson",
+                  "title": "استعمال مسطرة السنتمترات",
+                  "objective": "استعمال المسطرة لقياس الطول بالسنتمترات",
+                  "generator": "length.ruler",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "max_cm": 20,
+                        "offset": false
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "max_cm": 20,
+                        "offset": true
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "g2-s2-u11-l5",
+                  "ref": "11-5",
+                  "type": "lesson",
+                  "title": "مقارنة المساحات وترتيبها",
+                  "objective": "مقارنة مساحات أشكال بعدّ الوحدات المربعة",
+                  "generator": "area.units",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "rows": [1, 4],
+                        "cols": [1, 5],
+                        "compare": true
+                      }
+                    }
+                  },
+                  "verified": {
+                    "source": "G2 part 2 p. 120",
+                    "note": "Visual comparison; no units."
+                  }
+                },
+                {
+                  "id": "g2-s2-u11-l6",
+                  "ref": "11-6",
+                  "type": "lesson",
+                  "title": "قياس المساحة",
+                  "objective": "إيجاد المساحة بعدّ الوحدات المربعة",
+                  "generator": "area.units",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "rows": [1, 4],
+                        "cols": [1, 5]
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "rows": [2, 5],
+                        "cols": [2, 6]
+                      }
+                    }
+                  },
+                  "verified": {
+                    "source": "G2 part 2 pp. 122–123",
+                    "note": "Count unit squares; no half squares in grade 2."
+                  }
+                },
+                {
+                  "id": "g2-s2-u11-l7",
+                  "ref": "11-7",
+                  "type": "investigation",
+                  "title": "استقصاء حل المسألة",
+                  "objective": "اختيار خطة مناسبة لحل مسائل الطول والمساحة",
+                  "generator": "mix",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "pool": [
+                          {
+                            "generator": "length.nonstandard",
+                            "params": {
+                              "range": [2, 15]
+                            }
+                          },
+                          {
+                            "generator": "length.ruler",
+                            "params": {
+                              "max_cm": 15,
+                              "offset": false
+                            }
+                          },
+                          {
+                            "generator": "area.units",
+                            "params": {
+                              "rows": [1, 4],
+                              "cols": [1, 5]
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "id": "g2-s2-u12",
+              "number": 12,
+              "title": "القياس: السعة والكتلة",
+              "lessons": [
+                {
+                  "id": "g2-s2-u12-l1",
+                  "ref": "12-1",
+                  "type": "lesson",
+                  "title": "وحدات السعة غير القياسية",
+                  "objective": "مقارنة السعة بوحدات غير قياسية",
+                  "generator": "measure.nonstandard_compare",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "quantity": "capacity",
+                        "range": [2, 10]
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "g2-s2-u12-l2",
+                  "ref": "12-2",
+                  "type": "problem_solving",
+                  "title": "أحل المسألة: أمثّلها",
+                  "objective": "تمثيل مسألة لحلها",
+                  "generator": "word.add_sub",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "range": [2, 20],
+                        "kinds": ["join", "separate"],
+                        "max": 40
+                      }
+                    }
+                  },
+                  "flags": [
+                    {
+                      "kind": "ambiguous_skill",
+                      "note": "Context of the problems in 12-2 (capacity/mass) not verified; generic join/separate stories used."
+                    }
+                  ]
+                },
+                {
+                  "id": "g2-s2-u12-l3",
+                  "ref": "12-3",
+                  "type": "lesson",
+                  "title": "المللترات واللترات",
+                  "objective": "اختيار الوحدة المناسبة للسعة (ملّتر، لتر)",
+                  "generator": "measure.choose_unit",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "quantity": "capacity",
+                        "units": ["ملّتر", "لتر"]
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "g2-s2-u12-l4",
+                  "ref": "12-4",
+                  "type": "lesson",
+                  "title": "وحدات الكتلة غير القياسية",
+                  "objective": "مقارنة الكتلة بوحدات غير قياسية",
+                  "generator": "measure.nonstandard_compare",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "quantity": "mass",
+                        "range": [2, 10]
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "g2-s2-u12-l5",
+                  "ref": "12-5",
+                  "type": "lesson",
+                  "title": "الجرام والكيلوجرام",
+                  "objective": "اختيار الوحدة المناسبة للكتلة (جرام، كيلوجرام)",
+                  "generator": "measure.choose_unit",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "quantity": "mass",
+                        "units": ["جرام", "كيلوجرام"]
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "id": "g2-s2-u13",
+              "number": 13,
+              "title": "جمع الأعداد من ٣ أرقام وطرحها",
+              "lessons": [
+                {
+                  "id": "g2-s2-u13-l1",
+                  "ref": "13-1",
+                  "type": "lesson",
+                  "title": "جمع المئات",
+                  "objective": "جمع المئات الكاملة",
+                  "generator": "add.column",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "a": [100, 800],
+                        "b": [100, 800],
+                        "multiple_of": 100,
+                        "regroup": "none",
+                        "max_sum": 900
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "a": [100, 900],
+                        "b": [100, 900],
+                        "multiple_of": 100,
+                        "regroup": "any",
+                        "max_sum": 1000,
+                        "missing_rate": 0.3
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "g2-s2-u13-l2",
+                  "ref": "13-2",
+                  "type": "lesson",
+                  "title": "الجمع بإعادة تجميع الآحاد",
+                  "objective": "جمع أعداد من ثلاثة أرقام مع إعادة تجميع الآحاد",
+                  "generator": "add.column",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "a": [100, 899],
+                        "b": [10, 99],
+                        "regroup": "required",
+                        "regroup_place": "ones",
+                        "max_sum": 999
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "a": [100, 899],
+                        "b": [100, 899],
+                        "regroup": "required",
+                        "regroup_place": "ones",
+                        "max_sum": 999
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "g2-s2-u13-l3",
+                  "ref": "13-3",
+                  "type": "lesson",
+                  "title": "الجمع بإعادة تجميع العشرات",
+                  "objective": "جمع أعداد من ثلاثة أرقام مع إعادة تجميع العشرات",
+                  "generator": "add.column",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "a": [100, 899],
+                        "b": [10, 99],
+                        "regroup": "required",
+                        "regroup_place": "tens",
+                        "max_sum": 999
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "a": [100, 899],
+                        "b": [100, 899],
+                        "regroup": "required",
+                        "regroup_place": "tens",
+                        "max_sum": 999
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "g2-s2-u13-l4",
+                  "ref": "13-4",
+                  "type": "problem_solving",
+                  "title": "أحل المسألة: أنشئ جدولًا",
+                  "objective": "إنشاء جدول لحل مسألة فيها نمط ثابت",
+                  "generator": "word.make_table",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "rates": [5, 10, 50, 100],
+                        "days": [2, 6],
+                        "ask": ["total"],
+                        "hint": "أنشئ جدولًا"
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "rates": [5, 10, 50, 100],
+                        "days": [2, 8],
+                        "ask": ["total", "days"],
+                        "hint": "أنشئ جدولًا"
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "g2-s2-u13-l5",
+                  "ref": "13-5",
+                  "type": "lesson",
+                  "title": "تقدير ناتج الجمع",
+                  "objective": "تقدير ناتج جمع أعداد من ثلاثة أرقام",
+                  "generator": "add.estimate",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "a": [101, 449],
+                        "b": [101, 449],
+                        "to": 100,
+                        "max_sum": 1000
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "a": [101, 449],
+                        "b": [11, 449],
+                        "to": 10,
+                        "max_sum": 1000
+                      }
+                    }
+                  },
+                  "flags": [
+                    {
+                      "kind": "constraint_inferred",
+                      "note": "Rounding place (nearest 10 vs 100) for 3-digit estimation not verified."
+                    }
+                  ]
+                },
+                {
+                  "id": "g2-s2-u13-l6",
+                  "ref": "13-6",
+                  "type": "lesson",
+                  "title": "طرح المئات",
+                  "objective": "طرح المئات الكاملة",
+                  "generator": "sub.column",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "a": [200, 900],
+                        "b": [100, 800],
+                        "multiple_of": 100,
+                        "regroup": "none"
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "g2-s2-u13-l7",
+                  "ref": "13-7",
+                  "type": "lesson",
+                  "title": "الطرح بإعادة تجميع العشرات",
+                  "objective": "طرح أعداد من ثلاثة أرقام مع إعادة تجميع العشرات",
+                  "generator": "sub.column",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "a": [110, 999],
+                        "b": [2, 99],
+                        "regroup": "required",
+                        "regroup_place": "tens"
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "a": [200, 999],
+                        "b": [100, 899],
+                        "regroup": "required",
+                        "regroup_place": "tens"
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "g2-s2-u13-l8",
+                  "ref": "13-8",
+                  "type": "lesson",
+                  "title": "الطرح بإعادة تجميع المئات",
+                  "objective": "طرح أعداد من ثلاثة أرقام مع إعادة تجميع المئات",
+                  "generator": "sub.column",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "a": [200, 999],
+                        "b": [10, 99],
+                        "regroup": "required",
+                        "regroup_place": "hundreds"
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "a": [200, 999],
+                        "b": [100, 899],
+                        "regroup": "required",
+                        "regroup_place": "hundreds"
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "g2-s2-u13-l9",
+                  "ref": "13-9",
+                  "type": "lesson",
+                  "title": "تقدير ناتج الطرح",
+                  "objective": "تقدير ناتج طرح أعداد من ثلاثة أرقام",
+                  "generator": "sub.estimate",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "a": [301, 999],
+                        "b": [101, 699],
+                        "to": 100
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "a": [201, 999],
+                        "b": [11, 699],
+                        "to": 10
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "grade": 3,
+      "title": "الصف الثالث الابتدائي",
+      "semesters": [
+        {
+          "semester": 1,
+          "title": "الفصل الدراسي الأول",
+          "units": [
+            {
+              "id": "g3-s1-u1",
+              "number": 1,
+              "title": "القيمة المنزلية",
+              "lessons": [
+                {
+                  "id": "g3-s1-u1-l1",
+                  "ref": "1-1",
+                  "type": "lesson",
+                  "title": "الجبر: الأنماط العددية",
+                  "objective": "إيجاد قاعدة النمط العددي وإكماله",
+                  "generator": "num.pattern",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "start": [0, 100],
+                        "steps": [2, 5, 10],
+                        "directions": ["up"],
+                        "max": 1000
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "start": [0, 500],
+                        "steps": [3, 4, 25, 50, 100],
+                        "directions": ["up", "down"],
+                        "max": 1000
+                      }
+                    },
+                    "3": {
+                      "params": {
+                        "start": [100, 5000],
+                        "steps": [100, 1000],
+                        "directions": ["up", "down"],
+                        "max": 10000
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "g3-s1-u1-l2",
+                  "ref": "1-2",
+                  "type": "problem_solving",
+                  "title": "مهارة حل المسألة: استعمال الخطوات الأربع",
+                  "objective": "حل المسألة بخطوات: أفهم، أخطط، أحل، أتحقق",
+                  "generator": "word.two_step",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "range": [10, 99]
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "range": [100, 500]
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "g3-s1-u1-x1",
+                  "ref": "أستكشف",
+                  "type": "explore",
+                  "title": "أستكشف: القيمة المنزلية",
+                  "objective": "استكشاف القيمة المنزلية باستعمال النماذج",
+                  "generator": "num.place_value",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "range": [100, 9999],
+                        "ask": ["from_places"]
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "g3-s1-u1-l3",
+                  "ref": "1-3",
+                  "type": "lesson",
+                  "title": "القيمة المنزلية ضمن الألوف",
+                  "objective": "قراءة الأعداد ضمن الألوف وكتابتها وتحديد القيمة المنزلية لأرقامها",
+                  "generator": "num.place_value",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "range": [1000, 9999],
+                        "ask": ["value", "from_places"]
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "range": [1000, 9999],
+                        "ask": ["value", "place", "expanded"]
+                      }
+                    },
+                    "3": {
+                      "params": {
+                        "range": [1000, 9999],
+                        "ask": ["value", "place", "expanded", "from_places"]
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "g3-s1-u1-l4",
+                  "ref": "1-4",
+                  "type": "lesson",
+                  "title": "القيمة المنزلية ضمن عشرات الألوف",
+                  "objective": "قراءة الأعداد ضمن عشرات الألوف وتحديد القيمة المنزلية لأرقامها",
+                  "generator": "mix",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "pool": [
+                          {
+                            "generator": "num.place_value",
+                            "params": {
+                              "range": [10000, 99999],
+                              "ask": ["value", "from_places"]
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "pool": [
+                          {
+                            "generator": "num.place_value",
+                            "params": {
+                              "range": [10000, 99999],
+                              "ask": ["value", "place", "expanded", "from_places"]
+                            }
+                          },
+                          {
+                            "generator": "num.read_write",
+                            "params": {
+                              "range": [1000, 99999]
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "g3-s1-u1-l5",
+                  "ref": "1-5",
+                  "type": "lesson",
+                  "title": "مقارنة الأعداد",
+                  "objective": "مقارنة الأعداد ضمن عشرات الألوف",
+                  "generator": "num.compare",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "range": [1000, 9999]
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "range": [1000, 9999],
+                        "close": true
+                      }
+                    },
+                    "3": {
+                      "params": {
+                        "range": [1000, 99999],
+                        "close": true
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "g3-s1-u1-l6",
+                  "ref": "1-6",
+                  "type": "lesson",
+                  "title": "ترتيب الأعداد",
+                  "objective": "ترتيب الأعداد ضمن عشرات الألوف",
+                  "generator": "num.order",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "range": [1000, 9999],
+                        "count": 3
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "range": [1000, 99999],
+                        "count": 4
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "g3-s1-u1-l7",
+                  "ref": "1-7",
+                  "type": "lesson",
+                  "title": "التقريب إلى أقرب عشرة وإلى أقرب مئة",
+                  "objective": "تقريب الأعداد إلى أقرب عشرة وإلى أقرب مئة",
+                  "generator": "num.round",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "range": [10, 999],
+                        "to": [10]
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "range": [100, 9999],
+                        "to": [100]
+                      }
+                    },
+                    "3": {
+                      "params": {
+                        "range": [10, 9999],
+                        "to": [10, 100]
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "g3-s1-u1-l8",
+                  "ref": "1-8",
+                  "type": "lesson",
+                  "title": "التقريب إلى أقرب ألف",
+                  "objective": "تقريب الأعداد إلى أقرب ألف",
+                  "generator": "num.round",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "range": [1000, 9999],
+                        "to": [1000]
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "range": [1000, 99999],
+                        "to": [1000]
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "id": "g3-s1-u2",
+              "number": 2,
+              "title": "الجمع",
+              "lessons": [
+                {
+                  "id": "g3-s1-u2-l1",
+                  "ref": "2-1",
+                  "type": "lesson",
+                  "title": "الجبر: خصائص الجمع",
+                  "objective": "استعمال خصائص الإبدال والعنصر المحايد والتجميع في الجمع وتسميتها",
+                  "generator": "add.properties",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "properties": ["commutative", "identity"],
+                        "range": [1, 99],
+                        "ask": ["fill"]
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "properties": ["commutative", "identity", "associative"],
+                        "range": [1, 99],
+                        "ask": ["fill", "name"]
+                      }
+                    }
+                  },
+                  "verified": {
+                    "source": "G3 part 1 p. 53",
+                    "note": "Named: خاصية الإبدال، خاصية العنصر المحايد، خاصية التجميع; «أجد الناتج وأحدد الخاصية»."
+                  }
+                },
+                {
+                  "id": "g3-s1-u2-l2",
+                  "ref": "2-2",
+                  "type": "lesson",
+                  "title": "تقدير نواتج الجمع",
+                  "objective": "تقدير ناتج الجمع بالتقريب",
+                  "generator": "add.estimate",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "a": [11, 99],
+                        "b": [11, 99],
+                        "to": 10
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "a": [101, 999],
+                        "b": [101, 999],
+                        "to": 100
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "g3-s1-u2-l3",
+                  "ref": "2-3",
+                  "type": "problem_solving",
+                  "title": "مهارة حل المسألة: الجواب الدقيق أم التقديري",
+                  "objective": "تحديد ما إذا كانت المسألة تحتاج إلى جواب دقيق أم تقديري",
+                  "generator": "word.exact_or_estimate",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "range": [10, 99]
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "range": [100, 500]
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "g3-s1-u2-l4",
+                  "ref": "2-4",
+                  "type": "lesson",
+                  "title": "جمع الأعداد المكونة من رقمين",
+                  "objective": "جمع عددين من رقمين مع إعادة التجميع أو دونها",
+                  "generator": "add.column",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "a": [10, 99],
+                        "b": [10, 99],
+                        "regroup": "none"
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "a": [10, 99],
+                        "b": [10, 99],
+                        "regroup": "required"
+                      }
+                    },
+                    "3": {
+                      "params": {
+                        "a": [10, 99],
+                        "b": [10, 99],
+                        "regroup": "any",
+                        "missing_rate": 0.3
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "g3-s1-u2-l5",
+                  "ref": "2-5",
+                  "type": "problem_solving",
+                  "title": "مهارة حل المسألة: استعمال الخطوات الأربع",
+                  "objective": "حل مسائل جمع بالخطوات الأربع",
+                  "generator": "word.add_sub",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "range": [10, 99],
+                        "kinds": ["join"]
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "range": [100, 500],
+                        "kinds": ["join"]
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "g3-s1-u2-x1",
+                  "ref": "أستكشف",
+                  "type": "explore",
+                  "title": "أستكشف: جمع الأعداد المكونة من ثلاثة أرقام",
+                  "objective": "استكشاف جمع أعداد من ثلاثة أرقام بالنماذج",
+                  "generator": "add.column",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "a": [100, 899],
+                        "b": [100, 899],
+                        "regroup": "any",
+                        "max_sum": 999
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "g3-s1-u2-l6",
+                  "ref": "2-6",
+                  "type": "lesson",
+                  "title": "جمع الأعداد المكونة من ثلاثة أرقام",
+                  "objective": "جمع أعداد من ثلاثة أرقام مع إعادة التجميع",
+                  "generator": "add.column",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "a": [100, 899],
+                        "b": [100, 899],
+                        "regroup": "none",
+                        "max_sum": 999
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "a": [100, 899],
+                        "b": [100, 899],
+                        "regroup": "required",
+                        "max_sum": 999
+                      }
+                    },
+                    "3": {
+                      "params": {
+                        "a": [100, 999],
+                        "b": [100, 999],
+                        "regroup": "required",
+                        "regroup_place": "both"
+                      }
+                    }
+                  },
+                  "verified": {
+                    "source": "G3 part 1 pp. 71–75",
+                    "note": "Addends up to 3 digits; sums may pass ١٠٠٠ (e.g. ٧٣١ + ٣١٣)."
+                  }
+                }
+              ]
+            },
+            {
+              "id": "g3-s1-u3",
+              "number": 3,
+              "title": "الطرح",
+              "lessons": [
+                {
+                  "id": "g3-s1-u3-l1",
+                  "ref": "3-1",
+                  "type": "lesson",
+                  "title": "طرح الأعداد المكونة من رقمين",
+                  "objective": "طرح عددين من رقمين مع إعادة التجميع أو دونها",
+                  "generator": "sub.column",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "a": [20, 99],
+                        "b": [10, 89],
+                        "regroup": "none"
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "a": [20, 99],
+                        "b": [11, 89],
+                        "regroup": "required"
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "g3-s1-u3-l2",
+                  "ref": "3-2",
+                  "type": "lesson",
+                  "title": "تقدير نواتج الطرح",
+                  "objective": "تقدير ناتج الطرح بالتقريب",
+                  "generator": "sub.estimate",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "a": [21, 99],
+                        "b": [11, 89],
+                        "to": 10
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "a": [301, 999],
+                        "b": [101, 699],
+                        "to": 100
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "g3-s1-u3-l3",
+                  "ref": "3-3",
+                  "type": "problem_solving",
+                  "title": "مهارة حل المسألة: معقولية الجواب",
+                  "objective": "الحكم على معقولية الجواب بالتقدير",
+                  "generator": "word.reasonable",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "range": [100, 499],
+                        "op": "add"
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "range": [100, 999],
+                        "op": "sub"
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "g3-s1-u3-x1",
+                  "ref": "أستكشف",
+                  "type": "explore",
+                  "title": "أستكشف: طرح الأعداد المكونة من ٣ أرقام، مع إعادة التجميع",
+                  "objective": "استكشاف الطرح مع إعادة التجميع بالنماذج",
+                  "generator": "sub.column",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "a": [100, 999],
+                        "b": [10, 899],
+                        "regroup": "required"
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "g3-s1-u3-l4",
+                  "ref": "3-4",
+                  "type": "lesson",
+                  "title": "طرح الأعداد المكونة من ٣ أرقام، مع إعادة التجميع",
+                  "objective": "طرح أعداد من ثلاثة أرقام مع إعادة التجميع",
+                  "generator": "sub.column",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "a": [100, 999],
+                        "b": [10, 899],
+                        "regroup": "required",
+                        "regroup_place": "tens"
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "a": [200, 999],
+                        "b": [100, 899],
+                        "regroup": "required",
+                        "regroup_place": "hundreds"
+                      }
+                    },
+                    "3": {
+                      "params": {
+                        "a": [200, 999],
+                        "b": [100, 899],
+                        "regroup": "required"
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "g3-s1-u3-l5",
+                  "ref": "3-5",
+                  "type": "lesson",
+                  "title": "الطرح مع وجود الأصفار",
+                  "objective": "الطرح من أعداد فيها أصفار مع إعادة التجميع",
+                  "generator": "sub.column",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "a": [100, 900],
+                        "b": [1, 99],
+                        "regroup": "required",
+                        "zeros": true
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "a": [100, 909],
+                        "b": [100, 899],
+                        "regroup": "required",
+                        "zeros": true
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "g3-s1-u3-l6",
+                  "ref": "3-6",
+                  "type": "lesson",
+                  "title": "تحديد العملية المناسبة",
+                  "objective": "اختيار الجمع أو الطرح لحل مسألة",
+                  "generator": "word.choose_operation",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "ops": ["add", "sub"],
+                        "range": [10, 99]
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "ops": ["add", "sub"],
+                        "range": [100, 500]
+                      }
+                    }
+                  },
+                  "flags": [
+                    {
+                      "kind": "ambiguous_skill",
+                      "note": "The فهرس does not label 3-6 as a problem-solving lesson; treated as choose-the-operation word problems."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "g3-s1-u4",
+              "number": 4,
+              "title": "الضرب (١)",
+              "lessons": [
+                {
+                  "id": "g3-s1-u4-x1",
+                  "ref": "أستكشف",
+                  "type": "explore",
+                  "title": "أستكشف: معنى الضرب",
+                  "objective": "فهم الضرب بوصفه جمعًا متكررًا لمجموعات متساوية",
+                  "generator": "mul.equal_groups",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "groups": [2, 5],
+                        "size": [2, 5]
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "g3-s1-u4-l1",
+                  "ref": "4-1",
+                  "type": "lesson",
+                  "title": "الشبكات وعملية الضرب",
+                  "objective": "استعمال الشبكات لتمثيل الضرب",
+                  "generator": "mul.array",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "rows": [2, 5],
+                        "cols": [2, 5]
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "rows": [2, 5],
+                        "cols": [2, 10]
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "g3-s1-u4-l2",
+                  "ref": "4-2",
+                  "type": "lesson",
+                  "title": "الضرب في ٢",
+                  "objective": "حقائق الضرب في ٢",
+                  "generator": "mul.facts",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "tables": [2],
+                        "other": [1, 5]
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "tables": [2],
+                        "other": [1, 10]
+                      }
+                    },
+                    "3": {
+                      "params": {
+                        "tables": [2],
+                        "other": [1, 10],
+                        "missing_rate": 0.4
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "g3-s1-u4-l3",
+                  "ref": "4-3",
+                  "type": "lesson",
+                  "title": "الضرب في ٤",
+                  "objective": "حقائق الضرب في ٤",
+                  "generator": "mul.facts",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "tables": [4],
+                        "other": [1, 5]
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "tables": [4],
+                        "other": [1, 10]
+                      }
+                    },
+                    "3": {
+                      "params": {
+                        "tables": [2, 4],
+                        "other": [1, 10],
+                        "missing_rate": 0.4
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "g3-s1-u4-l4",
+                  "ref": "4-4",
+                  "type": "problem_solving",
+                  "title": "مهارة حل المسألة: تحديد المعطيات الزائدة أو الناقصة",
+                  "objective": "تحديد المعطيات الزائدة في المسألة",
+                  "generator": "word.extra_info",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "factor": [2, 4]
+                      }
+                    }
+                  },
+                  "flags": [
+                    {
+                      "kind": "ambiguous_skill",
+                      "note": "Only the 'extra information' half is generated; 'missing information' items need a different format."
+                    }
+                  ]
+                },
+                {
+                  "id": "g3-s1-u4-l5",
+                  "ref": "4-5",
+                  "type": "lesson",
+                  "title": "الضرب في ٥",
+                  "objective": "حقائق الضرب في ٥",
+                  "generator": "mul.facts",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "tables": [5],
+                        "other": [1, 5]
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "tables": [5],
+                        "other": [1, 10]
+                      }
+                    },
+                    "3": {
+                      "params": {
+                        "tables": [2, 4, 5],
+                        "other": [1, 10],
+                        "missing_rate": 0.4
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "g3-s1-u4-l6",
+                  "ref": "4-6",
+                  "type": "lesson",
+                  "title": "الضرب في ١٠",
+                  "objective": "حقائق الضرب في ١٠",
+                  "generator": "mul.facts",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "tables": [10],
+                        "other": [1, 10]
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "tables": [2, 4, 5, 10],
+                        "other": [1, 10],
+                        "missing_rate": 0.4
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "g3-s1-u4-l7",
+                  "ref": "4-7",
+                  "type": "investigation",
+                  "title": "استقصاء حل المسألة",
+                  "objective": "اختيار خطة مناسبة لحل المسألة",
+                  "generator": "mix",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "pool": [
+                          {
+                            "generator": "mul.equal_groups",
+                            "params": {
+                              "groups": [2, 5],
+                              "size": [2, 10]
+                            }
+                          },
+                          {
+                            "generator": "word.choose_operation",
+                            "params": {
+                              "ops": ["add", "sub", "mul"],
+                              "range": [10, 99],
+                              "factor": [2, 5]
+                            }
+                          },
+                          {
+                            "generator": "mul.facts",
+                            "params": {
+                              "tables": [2, 4, 5, 10],
+                              "other": [1, 10]
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "g3-s1-u4-l8",
+                  "ref": "4-8",
+                  "type": "lesson",
+                  "title": "الضرب في الصفر وفي الواحد",
+                  "objective": "خاصيتا الضرب في الصفر وفي الواحد",
+                  "generator": "mul.facts",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "tables": [0, 1],
+                        "other": [0, 10]
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "g3-s1-u4-p1",
+                  "ref": "تدريبات",
+                  "type": "practice",
+                  "title": "تدريبات على حقائق الضرب",
+                  "objective": "مراجعة حقائق الضرب في ٠ و١ و٢ و٤ و٥ و١٠",
+                  "generator": "mul.facts",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "tables": [0, 1, 2, 4, 5, 10],
+                        "other": [0, 10]
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "tables": [0, 1, 2, 4, 5, 10],
+                        "other": [0, 10],
+                        "missing_rate": 0.4
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "id": "g3-s1-u5",
+              "number": 5,
+              "title": "الضرب (٢)",
+              "lessons": [
+                {
+                  "id": "g3-s1-u5-x1",
+                  "ref": "أستكشف",
+                  "type": "explore",
+                  "title": "أستكشف: جدول الضرب",
+                  "objective": "استكشاف الأنماط في جدول الضرب",
+                  "generator": "mul.facts",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "tables": [0, 1, 2, 4, 5, 10],
+                        "other": [0, 10]
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "g3-s1-u5-l1",
+                  "ref": "5-1",
+                  "type": "lesson",
+                  "title": "الضرب في ٣",
+                  "objective": "حقائق الضرب في ٣",
+                  "generator": "mul.facts",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "tables": [3],
+                        "other": [1, 5]
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "tables": [3],
+                        "other": [0, 10]
+                      }
+                    },
+                    "3": {
+                      "params": {
+                        "tables": [3],
+                        "other": [0, 10],
+                        "missing_rate": 0.4
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "g3-s1-u5-l2",
+                  "ref": "5-2",
+                  "type": "lesson",
+                  "title": "الضرب في ٦",
+                  "objective": "حقائق الضرب في ٦",
+                  "generator": "mul.facts",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "tables": [6],
+                        "other": [1, 5]
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "tables": [6],
+                        "other": [0, 10]
+                      }
+                    },
+                    "3": {
+                      "params": {
+                        "tables": [3, 6],
+                        "other": [0, 10],
+                        "missing_rate": 0.4
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "g3-s1-u5-l3",
+                  "ref": "5-3",
+                  "type": "problem_solving",
+                  "title": "خطة حل المسألة: البحث عن نمط",
+                  "objective": "البحث عن نمط لحل المسألة",
+                  "generator": "word.find_pattern",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "context": "numbers",
+                        "steps": [2, 5, 10],
+                        "start": [1, 10]
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "context": "numbers",
+                        "steps": [3, 4, 6],
+                        "start": [2, 12]
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "g3-s1-u5-l4",
+                  "ref": "5-4",
+                  "type": "lesson",
+                  "title": "الضرب في ٧",
+                  "objective": "حقائق الضرب في ٧",
+                  "generator": "mul.facts",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "tables": [7],
+                        "other": [1, 5]
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "tables": [7],
+                        "other": [0, 10]
+                      }
+                    },
+                    "3": {
+                      "params": {
+                        "tables": [7],
+                        "other": [0, 10],
+                        "missing_rate": 0.4
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "g3-s1-u5-l5",
+                  "ref": "5-5",
+                  "type": "lesson",
+                  "title": "الضرب في ٨",
+                  "objective": "حقائق الضرب في ٨",
+                  "generator": "mul.facts",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "tables": [8],
+                        "other": [1, 5]
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "tables": [8],
+                        "other": [0, 10]
+                      }
+                    },
+                    "3": {
+                      "params": {
+                        "tables": [4, 8],
+                        "other": [0, 10],
+                        "missing_rate": 0.4
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "g3-s1-u5-l6",
+                  "ref": "5-6",
+                  "type": "lesson",
+                  "title": "الضرب في ٩",
+                  "objective": "حقائق الضرب في ٩",
+                  "generator": "mul.facts",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "tables": [9],
+                        "other": [1, 5]
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "tables": [9],
+                        "other": [0, 10]
+                      }
+                    },
+                    "3": {
+                      "params": {
+                        "tables": [9],
+                        "other": [0, 10],
+                        "missing_rate": 0.4
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "g3-s1-u5-l7",
+                  "ref": "5-7",
+                  "type": "lesson",
+                  "title": "الجبر: الخاصية التجميعية",
+                  "objective": "استعمال خاصية التجميع في الضرب",
+                  "generator": "mul.associative",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "tables": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+                      }
+                    }
+                  },
+                  "verified": {
+                    "source": "G3 part 1 p. 164",
+                    "note": "الخاصية التجميعية لعملية الضرب."
+                  }
+                },
+                {
+                  "id": "g3-s1-u5-p1",
+                  "ref": "تدريبات",
+                  "type": "practice",
+                  "title": "تدريبات على حقائق الضرب",
+                  "objective": "مراجعة حقائق الضرب حتى ١٠ × ١٠",
+                  "generator": "mul.facts",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "tables": [3, 6, 7, 8, 9],
+                        "other": [0, 10]
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "tables": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+                        "other": [0, 10],
+                        "missing_rate": 0.4
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "semester": 2,
+          "title": "الفصل الدراسي الثاني",
+          "units": [
+            {
+              "id": "g3-s2-u6",
+              "number": 6,
+              "title": "القسمة (١)",
+              "lessons": [
+                {
+                  "id": "g3-s2-u6-x1",
+                  "ref": "أستكشف",
+                  "type": "explore",
+                  "title": "أستكشف: مفهوم القسمة",
+                  "objective": "فهم القسمة بوصفها توزيعًا بالتساوي",
+                  "generator": "div.sharing",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "divisors": [2, 3, 4, 5],
+                        "quotient": [1, 5]
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "g3-s2-u6-l1",
+                  "ref": "6-1",
+                  "type": "lesson",
+                  "title": "علاقة القسمة بالطرح",
+                  "objective": "القسمة بوصفها طرحًا متكررًا",
+                  "generator": "div.repeated_subtraction",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "divisors": [2, 3, 4, 5],
+                        "quotient": [2, 5]
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "divisors": [2, 3, 4, 5, 6, 7, 8, 9, 10],
+                        "quotient": [2, 6]
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "g3-s2-u6-x2",
+                  "ref": "أستكشف",
+                  "type": "explore",
+                  "title": "أستكشف: علاقة القسمة بالضرب",
+                  "objective": "استكشاف العلاقة بين الضرب والقسمة",
+                  "generator": "div.fact_family",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "divisors": [2, 5, 10],
+                        "quotient": [1, 5]
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "g3-s2-u6-l2",
+                  "ref": "6-2",
+                  "type": "lesson",
+                  "title": "علاقة القسمة بالضرب",
+                  "objective": "استعمال حقائق الضرب لإيجاد ناتج القسمة (الحقائق المترابطة)",
+                  "generator": "div.fact_family",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "divisors": [2, 3, 4, 5],
+                        "quotient": [1, 10]
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "divisors": [2, 3, 4, 5, 6, 7, 8, 9, 10],
+                        "quotient": [1, 10]
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "g3-s2-u6-l3",
+                  "ref": "6-3",
+                  "type": "problem_solving",
+                  "title": "مهارة حل المسألة: أختار العملية المناسبة",
+                  "objective": "اختيار العملية المناسبة (جمع، طرح، ضرب، قسمة)",
+                  "generator": "word.choose_operation",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "ops": ["add", "sub", "mul", "div"],
+                        "range": [10, 99],
+                        "factor": [2, 5]
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "ops": ["add", "sub", "mul", "div"],
+                        "range": [100, 500],
+                        "factor": [2, 10]
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "g3-s2-u6-l4",
+                  "ref": "6-4",
+                  "type": "lesson",
+                  "title": "القسمة على ٢",
+                  "objective": "حقائق القسمة على ٢",
+                  "generator": "div.facts",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "divisors": [2],
+                        "quotient": [1, 5]
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "divisors": [2],
+                        "quotient": [1, 10]
+                      }
+                    },
+                    "3": {
+                      "params": {
+                        "divisors": [2],
+                        "quotient": [1, 10],
+                        "missing_rate": 0.4
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "g3-s2-u6-l5",
+                  "ref": "6-5",
+                  "type": "lesson",
+                  "title": "القسمة على ٥",
+                  "objective": "حقائق القسمة على ٥",
+                  "generator": "div.facts",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "divisors": [5],
+                        "quotient": [1, 5]
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "divisors": [5],
+                        "quotient": [1, 10]
+                      }
+                    },
+                    "3": {
+                      "params": {
+                        "divisors": [2, 5],
+                        "quotient": [1, 10],
+                        "missing_rate": 0.4
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "g3-s2-u6-l6",
+                  "ref": "6-6",
+                  "type": "lesson",
+                  "title": "القسمة على ١٠",
+                  "objective": "حقائق القسمة على ١٠",
+                  "generator": "div.facts",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "divisors": [10],
+                        "quotient": [1, 10]
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "divisors": [2, 5, 10],
+                        "quotient": [1, 10],
+                        "missing_rate": 0.4
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "g3-s2-u6-l7",
+                  "ref": "6-7",
+                  "type": "lesson",
+                  "title": "القسمة مع الصفر وعلى الواحد",
+                  "objective": "قواعد القسمة مع الصفر وعلى الواحد",
+                  "generator": "div.zero_one",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "range": [2, 10]
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "id": "g3-s2-u7",
+              "number": 7,
+              "title": "القسمة (٢)",
+              "lessons": [
+                {
+                  "id": "g3-s2-u7-x1",
+                  "ref": "أستكشف",
+                  "type": "explore",
+                  "title": "أستكشف: تمثيل القسمة بنموذج",
+                  "objective": "تمثيل القسمة بالنماذج",
+                  "generator": "div.sharing",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "divisors": [3, 4],
+                        "quotient": [1, 6]
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "g3-s2-u7-l1",
+                  "ref": "7-1",
+                  "type": "lesson",
+                  "title": "القسمة على ٣ وعلى ٤",
+                  "objective": "حقائق القسمة على ٣ وعلى ٤",
+                  "generator": "div.facts",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "divisors": [3, 4],
+                        "quotient": [1, 5]
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "divisors": [3, 4],
+                        "quotient": [1, 10]
+                      }
+                    },
+                    "3": {
+                      "params": {
+                        "divisors": [3, 4],
+                        "quotient": [1, 10],
+                        "missing_rate": 0.4
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "g3-s2-u7-l2",
+                  "ref": "7-2",
+                  "type": "problem_solving",
+                  "title": "خطة حل المسألة: أعمل جدولًا",
+                  "objective": "عمل جدول لحل مسائل الضرب والقسمة",
+                  "generator": "word.make_table",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "rates": [2, 3, 4, 5],
+                        "days": [2, 6],
+                        "ask": ["total"],
+                        "hint": "أعمل جدولًا"
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "rates": [3, 4, 5, 6, 7, 8, 9],
+                        "days": [2, 10],
+                        "ask": ["total", "days"],
+                        "hint": "أعمل جدولًا"
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "g3-s2-u7-l3",
+                  "ref": "7-3",
+                  "type": "lesson",
+                  "title": "القسمة على ٦ وعلى ٧",
+                  "objective": "حقائق القسمة على ٦ وعلى ٧",
+                  "generator": "div.facts",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "divisors": [6, 7],
+                        "quotient": [1, 5]
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "divisors": [6, 7],
+                        "quotient": [1, 10]
+                      }
+                    },
+                    "3": {
+                      "params": {
+                        "divisors": [6, 7],
+                        "quotient": [1, 10],
+                        "missing_rate": 0.4
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "g3-s2-u7-l4",
+                  "ref": "7-4",
+                  "type": "lesson",
+                  "title": "القسمة على ٨ وعلى ٩",
+                  "objective": "حقائق القسمة على ٨ وعلى ٩",
+                  "generator": "div.facts",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "divisors": [8, 9],
+                        "quotient": [1, 5]
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "divisors": [8, 9],
+                        "quotient": [1, 10]
+                      }
+                    },
+                    "3": {
+                      "params": {
+                        "divisors": [8, 9],
+                        "quotient": [1, 10],
+                        "missing_rate": 0.4
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "g3-s2-u7-l5",
+                  "ref": "7-5",
+                  "type": "investigation",
+                  "title": "استقصاء حل المسألة: أختار الخطة المناسبة",
+                  "objective": "اختيار خطة مناسبة لحل مسائل القسمة",
+                  "generator": "mix",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "pool": [
+                          {
+                            "generator": "div.sharing",
+                            "params": {
+                              "divisors": [2, 3, 4, 5, 6, 7, 8, 9],
+                              "quotient": [1, 10]
+                            }
+                          },
+                          {
+                            "generator": "word.make_table",
+                            "params": {
+                              "rates": [2, 3, 4, 5, 6],
+                              "days": [2, 8],
+                              "ask": ["days"],
+                              "hint": "أعمل جدولًا"
+                            }
+                          },
+                          {
+                            "generator": "word.choose_operation",
+                            "params": {
+                              "ops": ["mul", "div"],
+                              "range": [10, 99],
+                              "factor": [2, 9]
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "id": "g3-s2-u8",
+              "number": 8,
+              "title": "القياس",
+              "lessons": [
+                {
+                  "id": "g3-s2-u8-x1",
+                  "ref": "أستكشف",
+                  "type": "explore",
+                  "title": "أستكشف: الملمتر والسنتمتر",
+                  "objective": "استكشاف القياس بالملمتر والسنتمتر",
+                  "generator": "measure.choose_unit",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "quantity": "length",
+                        "units": ["ملمتر", "سنتمتر", "متر"]
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "g3-s2-u8-l1",
+                  "ref": "8-1",
+                  "type": "lesson",
+                  "title": "وحدات الطول المترية",
+                  "objective": "اختيار وحدة الطول المترية المناسبة",
+                  "generator": "measure.choose_unit",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "quantity": "length",
+                        "units": ["سنتمتر", "متر", "كيلومتر"],
+                        "ask": ["unit"]
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "quantity": "length",
+                        "units": ["ملمتر", "سنتمتر", "متر", "كيلومتر"],
+                        "ask": ["unit", "estimate"]
+                      }
+                    }
+                  },
+                  "verified": {
+                    "source": "G3 part 2 pp. 75–77",
+                    "note": "Choose the unit / the reasonable estimate (ملم، سم، م، كم). «١ م = ١٠٠ سم» only as a margin note, so conversions are not drilled."
+                  }
+                },
+                {
+                  "id": "g3-s2-u8-l2",
+                  "ref": "8-2",
+                  "type": "problem_solving",
+                  "title": "خطة حل المسألة: أحل عكسيًا",
+                  "objective": "الحل العكسي لإيجاد الكمية في البداية",
+                  "generator": "word.work_backward",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "range": [10, 99],
+                        "max": 150
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "range": [100, 500],
+                        "max": 800
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "g3-s2-u8-l3",
+                  "ref": "8-3",
+                  "type": "lesson",
+                  "title": "المحيط",
+                  "objective": "إيجاد محيط الأشكال المستوية",
+                  "generator": "perimeter",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "shapes": ["square", "rectangle", "triangle"],
+                        "side": [2, 10]
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "shapes": ["rectangle", "triangle", "polygon"],
+                        "side": [2, 20]
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "g3-s2-u8-x2",
+                  "ref": "أستكشف",
+                  "type": "explore",
+                  "title": "أستكشف: قياس المساحة",
+                  "objective": "استكشاف المساحة بعدّ الوحدات المربعة",
+                  "generator": "area.units",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "rows": [2, 4],
+                        "cols": [2, 5]
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "g3-s2-u8-l4",
+                  "ref": "8-4",
+                  "type": "lesson",
+                  "title": "قياس المساحة",
+                  "objective": "إيجاد المساحة بالوحدات المربعة",
+                  "generator": "area.units",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "rows": [2, 6],
+                        "cols": [2, 8]
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "rows": [3, 6],
+                        "cols": [3, 8],
+                        "composite": true,
+                        "halves": true
+                      }
+                    }
+                  },
+                  "verified": {
+                    "source": "G3 part 2 pp. 88–89",
+                    "note": "Square units; includes half squares («نصفا مربع يساويان مربعًا كاملًا»)."
+                  }
+                },
+                {
+                  "id": "g3-s2-u8-l5",
+                  "ref": "8-5",
+                  "type": "lesson",
+                  "title": "وحدات السعة المترية",
+                  "objective": "اختيار وحدة السعة المناسبة (ملّتر، لتر)",
+                  "generator": "measure.choose_unit",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "quantity": "capacity",
+                        "units": ["ملّتر", "لتر"],
+                        "ask": ["unit"]
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "quantity": "capacity",
+                        "units": ["ملّتر", "لتر"],
+                        "ask": ["unit", "estimate"]
+                      }
+                    }
+                  },
+                  "verified": {
+                    "source": "G3 part 2 p. 93",
+                    "note": "Choose unit or estimate («٢ مل أم ٢ ل»)."
+                  }
+                },
+                {
+                  "id": "g3-s2-u8-l6",
+                  "ref": "8-6",
+                  "type": "lesson",
+                  "title": "وحدات الكتلة المترية",
+                  "objective": "اختيار وحدة الكتلة المناسبة (جرام، كيلوجرام)",
+                  "generator": "measure.choose_unit",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "quantity": "mass",
+                        "units": ["جرام", "كيلوجرام"],
+                        "ask": ["unit"]
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "quantity": "mass",
+                        "units": ["جرام", "كيلوجرام"],
+                        "ask": ["unit", "estimate"]
+                      }
+                    }
+                  },
+                  "verified": {
+                    "source": "G3 part 2 p. 97",
+                    "note": "Choose unit or estimate («٥٠٠ جم أم ٥٠٠ كجم»)."
+                  }
+                },
+                {
+                  "id": "g3-s2-u8-x3",
+                  "ref": "أستكشف",
+                  "type": "explore",
+                  "title": "أستكشف: الحجم",
+                  "objective": "استكشاف الحجم بعدّ المكعبات",
+                  "generator": "volume.cubes",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "dims": [1, 3]
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "g3-s2-u8-l7",
+                  "ref": "8-7",
+                  "type": "lesson",
+                  "title": "تقدير الحجم وقياسه",
+                  "objective": "قياس الحجم بالوحدات المكعبة",
+                  "generator": "volume.cubes",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "dims": [1, 4]
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "dims": [2, 5]
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "g3-s2-u8-l8",
+                  "ref": "8-8",
+                  "type": "lesson",
+                  "title": "الزمن: قراءة الساعة",
+                  "objective": "قراءة الوقت على الساعة",
+                  "generator": "time.read_clock",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "minute_step": 5,
+                        "format": "digital"
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "minute_step": 1,
+                        "format": "digital"
+                      }
+                    }
+                  },
+                  "verified": {
+                    "source": "G3 part 2 pp. 106–107",
+                    "note": "To the nearest minute (e.g. ٥:٤٧). One elapsed-time item exists but is not generated."
+                  }
+                }
+              ]
+            },
+            {
+              "id": "g3-s2-u9",
+              "number": 9,
+              "title": "الأشكال الهندسية",
+              "lessons": [
+                {
+                  "id": "g3-s2-u9-l1",
+                  "ref": "9-1",
+                  "type": "lesson",
+                  "title": "المجسمات",
+                  "objective": "وصف المجسمات بأوجهها وأحرفها ورؤوسها",
+                  "generator": "geo.solids",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "solids": ["مكعب", "متوازي مستطيلات", "مخروط", "هرم رباعي", "أسطوانة", "كرة"],
+                        "ask": ["name", "rolls"]
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "solids": ["مكعب", "متوازي مستطيلات", "هرم رباعي"],
+                        "ask": ["faces", "edges", "vertices"]
+                      }
+                    }
+                  },
+                  "verified": {
+                    "source": "G3 part 2 p. 117",
+                    "note": "Solids: مكعب، متوازي مستطيلات، مخروط، هرم رباعي، أسطوانة، كرة."
+                  }
+                },
+                {
+                  "id": "g3-s2-u9-l2",
+                  "ref": "9-2",
+                  "type": "lesson",
+                  "title": "الأشكال المستوية",
+                  "objective": "وصف الأشكال المستوية وتصنيفها حسب أضلاعها ورؤوسها",
+                  "generator": "geo.plane",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "shapes": ["مثلث", "شكل رباعي", "شكل خماسي", "شكل سداسي", "شكل ثماني"],
+                        "ask": ["sides", "corners"],
+                        "corner": "angles"
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "shapes": ["مثلث", "شكل رباعي", "شكل خماسي", "شكل سداسي", "شكل ثماني"],
+                        "ask": ["sides", "corners", "name"],
+                        "corner": "angles"
+                      }
+                    }
+                  },
+                  "verified": {
+                    "source": "G3 part 2 p. 120",
+                    "note": "Counts أضلاع and زوايا (not رؤوس); uses شكل رباعي."
+                  }
+                },
+                {
+                  "id": "g3-s2-u9-l3",
+                  "ref": "9-3",
+                  "type": "problem_solving",
+                  "title": "خطة حل المسألة: أحل مسألة أبسط",
+                  "objective": "حل مسألة أبسط لإيجاد النمط ثم تعميمه",
+                  "generator": "word.simpler_problem",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "tables": [2, 6]
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "tables": [5, 10]
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "g3-s2-u9-l4",
+                  "ref": "9-4",
+                  "type": "lesson",
+                  "title": "الأنماط الهندسية",
+                  "objective": "إكمال الأنماط الهندسية",
+                  "generator": "geo.pattern",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "units": ["AB", "ABC", "AAB"]
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "units": ["ABB", "AABB", "ABC"]
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "g3-s2-u9-l5",
+                  "ref": "9-5",
+                  "type": "investigation",
+                  "title": "استقصاء حل المسألة: أختار الخطة المناسبة",
+                  "objective": "اختيار خطة مناسبة لحل مسائل هندسية",
+                  "generator": "mix",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "pool": [
+                          {
+                            "generator": "word.simpler_problem",
+                            "params": {
+                              "tables": [2, 8]
+                            }
+                          },
+                          {
+                            "generator": "geo.pattern",
+                            "params": {
+                              "units": ["AB", "ABC", "AAB", "ABB"]
+                            }
+                          },
+                          {
+                            "generator": "geo.plane",
+                            "params": {
+                              "shapes": ["مثلث", "شكل رباعي", "شكل خماسي", "شكل سداسي", "شكل ثماني"],
+                              "ask": ["sides", "name"],
+                              "corner": "angles"
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "g3-s2-u9-l6",
+                  "ref": "9-6",
+                  "type": "lesson",
+                  "title": "التماثل",
+                  "objective": "تحديد ما إذا كان للشكل محور تماثل",
+                  "generator": "geo.symmetry",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "ask": ["has_axis"]
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "ask": ["has_axis", "count_axes"]
+                      }
+                    }
+                  },
+                  "verified": {
+                    "source": "G3 part 2 pp. 133–135",
+                    "note": "Yes/no, and if yes, how many axes."
+                  }
+                }
+              ]
+            },
+            {
+              "id": "g3-s2-u10",
+              "number": 10,
+              "title": "عرض البيانات وتفسيرها",
+              "lessons": [
+                {
+                  "id": "g3-s2-u10-x1",
+                  "ref": "أستكشف",
+                  "type": "explore",
+                  "title": "أستكشف: التمثيل بالرموز",
+                  "objective": "استكشاف التمثيل بالرموز حيث يمثل الرمز أكثر من واحد",
+                  "generator": "data.pictograph",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "max": 20,
+                        "keys": [2],
+                        "ask": ["value"]
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "g3-s2-u10-l1",
+                  "ref": "10-1",
+                  "type": "lesson",
+                  "title": "التمثيل بالرموز",
+                  "objective": "تمثيل البيانات بالرموز باستعمال مفتاح",
+                  "generator": "data.pictograph",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "max": 20,
+                        "keys": [2],
+                        "ask": ["value", "most", "least"]
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "max": 50,
+                        "keys": [2, 5, 10],
+                        "ask": ["value", "most", "least"]
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "g3-s2-u10-l2",
+                  "ref": "10-2",
+                  "type": "lesson",
+                  "title": "تفسير التمثيل بالرموز",
+                  "objective": "قراءة التمثيل بالرموز وتفسيره",
+                  "generator": "data.pictograph",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "max": 30,
+                        "keys": [2, 5],
+                        "ask": ["value", "difference"]
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "max": 50,
+                        "keys": [2, 5, 10],
+                        "ask": ["difference", "total"]
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "g3-s2-u10-l3",
+                  "ref": "10-3",
+                  "type": "problem_solving",
+                  "title": "خطة حل المسألة: أنشئ قائمة",
+                  "objective": "إنشاء قائمة منظمة لإيجاد جميع الاحتمالات",
+                  "generator": "word.make_list",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "mode": "combos",
+                        "combos": [2, 3]
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "mode": "combos",
+                        "combos": [2, 5]
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "g3-s2-u10-x2",
+                  "ref": "أستكشف",
+                  "type": "explore",
+                  "title": "أستكشف: التمثيل بالأعمدة",
+                  "objective": "استكشاف التمثيل بالأعمدة",
+                  "generator": "data.bar_graph",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "max": 20,
+                        "scale": [2],
+                        "ask": ["value", "most", "least"]
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "g3-s2-u10-l4",
+                  "ref": "10-4",
+                  "type": "lesson",
+                  "title": "التمثيل بالأعمدة",
+                  "objective": "تمثيل البيانات بالأعمدة",
+                  "generator": "data.bar_graph",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "max": 20,
+                        "scale": [2],
+                        "ask": ["value", "most", "least"]
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "max": 50,
+                        "scale": [5],
+                        "ask": ["value", "most", "least"]
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "g3-s2-u10-l5",
+                  "ref": "10-5",
+                  "type": "lesson",
+                  "title": "تفسير التمثيل بالأعمدة",
+                  "objective": "قراءة التمثيل بالأعمدة وتفسيره",
+                  "generator": "data.bar_graph",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "max": 50,
+                        "scale": [5],
+                        "ask": ["value", "difference"]
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "max": 100,
+                        "scale": [5, 10],
+                        "ask": ["difference", "total"]
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "g3-s2-u10-e1",
+                  "ref": "توسع",
+                  "type": "extension",
+                  "title": "توسع: معمل الجداول الإلكترونية: التمثيل بالأعمدة",
+                  "objective": "إنشاء تمثيل بالأعمدة باستعمال الجداول الإلكترونية",
+                  "generator": "data.bar_graph",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "max": 100,
+                        "scale": [10],
+                        "ask": ["value", "most", "least", "difference"]
+                      }
+                    }
+                  },
+                  "flags": [
+                    {
+                      "kind": "not_generatable",
+                      "note": "The spreadsheet activity itself can't be generated; this lesson reuses bar-graph reading."
+                    }
+                  ]
+                },
+                {
+                  "id": "g3-s2-u10-l6",
+                  "ref": "10-6",
+                  "type": "lesson",
+                  "title": "الاحتمال",
+                  "objective": "وصف إمكانية وقوع حدث",
+                  "generator": "data.chance",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "mode": "describe4",
+                        "terms": {
+                          "certain": "أكيد",
+                          "more": "أكثر احتمالًا",
+                          "less": "أقل احتمالًا",
+                          "impossible": "مستحيل"
+                        }
+                      }
+                    }
+                  },
+                  "verified": {
+                    "source": "G3 part 2 pp. 170–172",
+                    "note": "Four terms: أكيد، أكثر احتمالًا، أقل احتمالًا، مستحيل (no ممكن)."
+                  }
+                }
+              ]
+            },
+            {
+              "id": "g3-s2-u11",
+              "number": 11,
+              "title": "الكسور",
+              "lessons": [
+                {
+                  "id": "g3-s2-u11-x1",
+                  "ref": "أستكشف",
+                  "type": "explore",
+                  "title": "أستكشف: تمثيل الكسور",
+                  "objective": "تمثيل الكسور بنماذج الكسور",
+                  "generator": "frac.part_of_whole",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "denominators": [2, 3, 4, 5, 6, 8],
+                        "numerators": "unit",
+                        "models": ["strip", "rect"]
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "g3-s2-u11-l1",
+                  "ref": "11-1",
+                  "type": "lesson",
+                  "title": "الكسور كأجزاء من الكل",
+                  "objective": "كتابة كسر يدل على جزء من الكل وقراءته (البسط والمقام)",
+                  "generator": "frac.part_of_whole",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "denominators": [3, 4, 5, 6, 8],
+                        "numerators": "unit",
+                        "models": ["strip", "rect", "circle"]
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "denominators": [3, 4, 5, 6, 7, 8],
+                        "numerators": "any",
+                        "models": ["strip", "rect", "circle"]
+                      }
+                    }
+                  },
+                  "verified": {
+                    "source": "G3 part 2 pp. 185–187",
+                    "note": "Terms البسط/المقام; denominators 3–8."
+                  }
+                },
+                {
+                  "id": "g3-s2-u11-l2",
+                  "ref": "11-2",
+                  "type": "lesson",
+                  "title": "الكسور كأجزاء من مجموعة",
+                  "objective": "كتابة كسر يدل على جزء من مجموعة وإيجاد جزء من مجموعة",
+                  "generator": "frac.of_set",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "denominators": [3, 4, 5],
+                        "ask": ["fraction"]
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "denominators": [3, 4, 5],
+                        "ask": ["fraction", "count"],
+                        "groups": [2, 4]
+                      }
+                    }
+                  },
+                  "flags": [
+                    {
+                      "kind": "constraint_inferred",
+                      "note": "Denominators 3–5 verified (pp. 188–189); \"find the part of a set\" (difficulty 2) not confirmed on the page."
+                    }
+                  ]
+                },
+                {
+                  "id": "g3-s2-u11-x2",
+                  "ref": "أستكشف",
+                  "type": "explore",
+                  "title": "أستكشف: الكسور المتكافئة",
+                  "objective": "استكشاف الكسور المتكافئة بالنماذج",
+                  "generator": "frac.equivalent",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "denominators": [2, 4],
+                        "max_den": 8,
+                        "blanks": ["right_num"]
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "g3-s2-u11-l3",
+                  "ref": "11-3",
+                  "type": "lesson",
+                  "title": "الكسور المتكافئة",
+                  "objective": "إيجاد كسور متكافئة",
+                  "generator": "frac.equivalent",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "denominators": [2, 3, 4],
+                        "max_den": 8,
+                        "blanks": ["right_num"]
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "denominators": [2, 3, 4, 5, 6],
+                        "max_den": 12,
+                        "blanks": ["right_num", "left_num", "right_den"]
+                      }
+                    }
+                  },
+                  "verified": {
+                    "source": "G3 part 2 pp. 192–196",
+                    "note": "Strips; blanks in any position; denominators up to ١٢."
+                  }
+                },
+                {
+                  "id": "g3-s2-u11-l4",
+                  "ref": "11-4",
+                  "type": "problem_solving",
+                  "title": "خطة حل المسألة: أرسم صورة",
+                  "objective": "رسم صورة لحل مسائل الكسور",
+                  "generator": "word.draw_picture_fraction",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "denominators": [2, 3, 4],
+                        "ask": ["eaten", "left"]
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "denominators": [2, 3, 4, 5],
+                        "ask": ["count", "eaten", "left"],
+                        "groups": [2, 5]
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "g3-s2-u11-l5",
+                  "ref": "11-5",
+                  "type": "lesson",
+                  "title": "مقارنة الكسور وترتيبها",
+                  "objective": "مقارنة الكسور وترتيبها باستعمال النماذج",
+                  "generator": "frac.compare",
+                  "difficulties": {
+                    "1": {
+                      "params": {
+                        "denominators": [3, 4, 5, 8, 10],
+                        "modes": ["same_den"]
+                      }
+                    },
+                    "2": {
+                      "params": {
+                        "denominators": [2, 3, 4, 6, 8, 12],
+                        "modes": ["same_den", "related"]
+                      }
+                    },
+                    "3": {
+                      "generator": "frac.order",
+                      "params": {
+                        "denominators": [2, 3, 4, 6, 8, 12],
+                        "modes": ["same_den", "related"]
+                      }
+                    }
+                  },
+                  "verified": {
+                    "source": "G3 part 2 pp. 200–202",
+                    "note": "Same denominator and related denominators (e.g. ٣/٤ و٧/٨); ordering sets of three."
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

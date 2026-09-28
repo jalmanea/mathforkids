@@ -1,0 +1,15 @@
+{
+  "name": "saudi-math-engine",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Curriculum map and randomized exercise generator for Saudi grades 2–3 math (Phase 1: content/logic layer only).",
+  "type": "module",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "node --test \"test/**/*.test.js\"",
+    "sample": "node scripts/sample.js"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
