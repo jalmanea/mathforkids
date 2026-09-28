@@ -2,14 +2,27 @@
   "name": "saudi-math-engine",
   "version": "0.1.0",
   "private": true,
-  "description": "Curriculum map and randomized exercise generator for Saudi grades 2–3 math (Phase 1: content/logic layer only).",
+  "description": "Saudi grades 2–3 math: curriculum map, exercise engine (src/) and the installable practice app (app/).",
   "type": "module",
   "main": "src/index.js",
   "scripts": {
-    "test": "node --test \"test/**/*.test.js\"",
-    "sample": "node scripts/sample.js"
+    "test": "node --test \"test/**/*.test.js\" \"app/test/**/*.test.js\"",
+    "sample": "node scripts/sample.js",
+    "dev": "vite --config app/vite.config.js",
+    "build": "vite build --config app/vite.config.js",
+    "preview": "vite preview --config app/vite.config.js",
+    "icons": "node app/scripts/make-icons.js"
   },
   "engines": {
     "node": ">=20"
+  },
+  "dependencies": {
+    "dexie": "^4.4.6",
+    "preact": "^10.29.8"
+  },
+  "devDependencies": {
+    "@preact/preset-vite": "^2.10.6",
+    "vite": "^8.3.1",
+    "vite-plugin-pwa": "^1.3.0"
   }
 }
