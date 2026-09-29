@@ -346,3 +346,91 @@ h1, h2, h3 { margin: 0; line-height: 1.3; }
 .pin-dots span.on { background: var(--primary); }
 .center-text { text-align: center; }
 .empty { text-align: center; color: var(--muted); padding: 12px 0; }
+
+/* Stacked fractions in prompts, choices and feedback */
+.frac { display: inline-flex; flex-direction: column; align-items: center; vertical-align: middle; line-height: 1.05; margin: 0 3px; font-size: 0.85em; }
+.frac-num { padding: 0 3px 2px; border-bottom: 2px solid currentColor; }
+.frac-den { padding: 2px 3px 0; }
+.prompt .frac { margin: 2px 4px; }
+
+/* Fraction models */
+.frac-model .part { fill: var(--surface); stroke: var(--text); stroke-width: 2; }
+.frac-model .part.on { fill: var(--accent); }
+:root[data-theme='stitch'] .frac-model .part.on { fill: var(--accent-2); }
+.frac-model .frac-q { font-size: 26px; font-weight: 800; fill: var(--muted); }
+.frac-stack { display: grid; gap: 10px; justify-items: center; }
+.set-groups { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+.set-group { display: inline-flex; flex-wrap: wrap; gap: 2px; max-width: 132px; justify-content: center; padding: 6px; border: 2px dashed var(--muted); border-radius: 18px; }
+.set-plain { display: inline-flex; flex-wrap: wrap; gap: 4px; justify-content: center; max-width: 280px; }
+.ball-red { fill: #e0453a; stroke: rgba(0, 0, 0, 0.25); stroke-width: 1.5; }
+.ball-plain { fill: #9aa7b8; stroke: rgba(0, 0, 0, 0.25); stroke-width: 1.5; }
+
+/* Money */
+.money { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; align-items: center; }
+.money svg { font-family: inherit; }
+.coin-1 { fill: #c9ccd3; stroke: #8a8f99; stroke-width: 2; }
+.coin-2 { fill: #e3c35a; stroke: #a8862a; stroke-width: 2; }
+.coin-ring { fill: none; stroke: rgba(0, 0, 0, 0.18); stroke-width: 1.5; }
+.coin-v { font-size: 20px; font-weight: 800; fill: #222; }
+.coin-u { font-size: 10px; font-weight: 700; fill: #333; }
+.note-inner { fill: rgba(255, 255, 255, 0.82); }
+.note-v { font-size: 22px; font-weight: 800; fill: #222; }
+.note-u { font-size: 12px; font-weight: 700; fill: #333; }
+.note-corner { font-size: 16px; font-weight: 800; fill: #555; }
+
+/* Clock */
+.clock { font-family: inherit; }
+.clock-face { fill: var(--surface); stroke: var(--primary); stroke-width: 6; }
+.tick-h { stroke: var(--text); stroke-width: 3; }
+.tick-m { stroke: var(--muted); stroke-width: 1.2; }
+.clock-num { font-size: 20px; font-weight: 800; fill: var(--text); }
+.hand-h { stroke: var(--text); stroke-width: 7; stroke-linecap: round; }
+.hand-m { stroke: var(--accent); stroke-width: 4; stroke-linecap: round; }
+.clock-pin { fill: var(--text); }
+
+/* Ruler */
+.ruler { max-width: 100%; height: auto; font-family: inherit; }
+.ruler-body { fill: #f7e7a8; stroke: #b99b3a; stroke-width: 1.5; }
+.ruler-tick { stroke: #4a3c10; stroke-width: 1.3; }
+.ruler-num { font-size: 11px; font-weight: 700; fill: #4a3c10; }
+.ruler-unit { font-size: 10px; fill: #4a3c10; }
+.pencil-body { fill: #f2b33d; stroke: #a8762a; stroke-width: 1; }
+.pencil-eraser { fill: #f06aa9; }
+.pencil-tip { fill: #f1d7a8; stroke: #a8762a; stroke-width: 1; }
+.pencil-lead { fill: #333; }
+.guide { stroke: var(--muted); stroke-width: 1; stroke-dasharray: 3 3; }
+
+/* Area grids */
+.area-grid { max-width: 100%; height: auto; }
+.grid-line { stroke: var(--border); stroke-width: 1; }
+.area-cell { fill: var(--primary-soft); stroke: var(--primary); stroke-width: 1.5; }
+.area-cell.red { fill: #f7c9c4; stroke: #c9362b; }
+.area-cell.blue { fill: #c9dbf7; stroke: #2f6fd6; }
+
+/* Geometry */
+.plane .shape, .compose .shape, .perimeter .shape, .shape-seq .shape { fill: var(--primary-soft); stroke: var(--primary); stroke-width: 3; stroke-linejoin: round; }
+.shape-seq { display: flex; flex-wrap: nowrap; gap: 4px; justify-content: center; align-items: center; width: 100%; }
+.shape-seq > * { flex: 0 1 40px; min-width: 0; height: auto; }
+.shape-seq .c1 { fill: #c9dbf7; stroke: #2f6fd6; }
+.shape-seq .c2 { fill: #f7c9c4; stroke: #c9362b; }
+.shape-seq .c3 { fill: #cdeccf; stroke: #2e9e55; }
+.shape-seq .c4 { fill: #fbe3b0; stroke: #c98a10; }
+.shape-seq .c5 { fill: #e3d6f5; stroke: #7a52c4; }
+.seq-missing { aspect-ratio: 1; box-sizing: border-box; display: grid; place-items: center; border: 2px dashed var(--muted); border-radius: 8px; font-weight: 800; color: var(--muted); }
+.solid { font-family: inherit; }
+.solid-face { fill: var(--primary-soft); }
+.solid-face.s1 { fill: var(--surface-2); }
+.solid-face.s2 { fill: var(--ring-track); }
+.solid-edge { fill: none; stroke: var(--primary); stroke-width: 2.5; stroke-linejoin: round; }
+.solid-hidden { fill: none; stroke: var(--primary); stroke-width: 1.5; stroke-dasharray: 5 4; opacity: 0.7; }
+.solid-vertex { fill: var(--accent); stroke: var(--surface); stroke-width: 1.5; }
+.solid-vertex.hidden { opacity: 0.55; }
+.compose-whole { fill: none; stroke: var(--primary); stroke-width: 3; stroke-dasharray: 7 5; stroke-linejoin: round; }
+.compose-arrow { fill: none; stroke: var(--muted); stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+.compose-q { font-size: 30px; font-weight: 800; fill: var(--muted); font-family: inherit; }
+.side-label { font-size: 15px; font-weight: 700; fill: var(--text); font-family: inherit; }
+.cubes { max-width: 100%; height: auto; }
+.cube-top { fill: #c9dbf7; stroke: #274f8f; stroke-width: 1.2; stroke-linejoin: round; }
+.cube-left { fill: #7ea6e3; stroke: #274f8f; stroke-width: 1.2; stroke-linejoin: round; }
+.cube-right { fill: #a3c0ee; stroke: #274f8f; stroke-width: 1.2; stroke-linejoin: round; }
+.table-top { fill: #d9b78a; stroke: #8a6a3a; stroke-width: 2; }

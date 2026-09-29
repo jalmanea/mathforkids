@@ -8,6 +8,7 @@ import { updateProgress } from '../game/progress.js';
 import { planSession } from '../game/session.js';
 import { levelFor } from '../game/progress.js';
 import { Visual } from '../visuals/index.jsx';
+import { MathText } from '../visuals/fractions.jsx';
 import { Keypad, Icon, ar } from '../components.jsx';
 import { play } from '../sound.js';
 import { speak, stopSpeaking } from '../speech.js';
@@ -118,7 +119,7 @@ export function Practice({ app, lessonId }) {
       play('wrong');
       setPhase('revealed');
       finalize(finishAttempt(log, 'gave_up'));
-      setFeedback({ text: `الإجابة الصحيحة: ${cur.ex.answer}`, kind: 'reveal' });
+      setFeedback({ text: <>الإجابة الصحيحة: <MathText text={cur.ex.answer} /></>, kind: 'reveal' });
       return;
     }
     play('wrong');
@@ -172,7 +173,7 @@ export function Practice({ app, lessonId }) {
       <section class={`card prompt-card ${shake ? 'shake' : ''}`} key={`${ex.exercise_id}-${shake}`}>
         {cur.review && <span class="review-tag">مراجعة: {cur.lesson.title}</span>}
         <div class="prompt-row">
-          <p class={`prompt ${ex.prompt.length > 60 ? 'long' : ''}`} style={{ margin: 0 }}>{ex.prompt}</p>
+          <p class={`prompt ${ex.prompt.length > 60 ? 'long' : ''}`} style={{ margin: 0 }}><MathText text={ex.prompt} /></p>
           {voice && settings.readAloud && (
             <button class="icon-btn" onClick={() => speak(ex.prompt)} aria-label="اقرأ السؤال">{Icon.speaker}</button>
           )}
@@ -202,7 +203,7 @@ export function Practice({ app, lessonId }) {
                 disabled={isWrong || done}
                 onClick={() => answer(c)}
               >
-                {c}
+                <MathText text={c} />
               </button>
             );
           })}

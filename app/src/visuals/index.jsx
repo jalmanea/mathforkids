@@ -1,12 +1,15 @@
-// Renderer registry keyed by exercise.visual.kind. Covers grade 3 semester 1
-// and grade 2 semester 1 (counting, data, chance). Fractions, clock, money,
-// measurement and geometry come later. Lessons that produce an unregistered
-// kind are hidden from the map.
+// Renderer registry keyed by exercise.visual.kind. Covers every kind the
+// engine produces for grades 2 and 3. A lesson that produces a kind with no
+// renderer is hidden from the map, so a new generator kind never shows a
+// broken exercise.
 
 import { PlaceValueChart } from './PlaceValueChart.jsx';
 import { ArrayGrid } from './ArrayGrid.jsx';
 import { EqualGroups } from './EqualGroups.jsx';
 import { ObjectCloud, TallyTable, Pictograph, BarGraph, DataTable, Bag } from './data.jsx';
+import { FractionModel, FractionCompare, FractionList, SetModel } from './fractions.jsx';
+import { Money, Clock, Ruler, GridArea, GridShapes } from './measure.jsx';
+import { PlaneShape, Solid, ShapeSequence, ComposeShapes, Polygon, CubeStack, TablesRow } from './geometry.jsx';
 
 export const RENDERERS = {
   place_value_chart: PlaceValueChart,
@@ -18,11 +21,25 @@ export const RENDERERS = {
   bar_graph: BarGraph,
   table: DataTable,
   bag: Bag,
+  fraction_model: FractionModel,
+  fraction_compare: FractionCompare,
+  fraction_list: FractionList,
+  set_model: SetModel,
+  money: Money,
+  clock: Clock,
+  ruler: Ruler,
+  grid_area: GridArea,
+  grid_shapes: GridShapes,
+  plane_shape: PlaneShape,
+  solid: Solid,
+  shape_sequence: ShapeSequence,
+  compose_shapes: ComposeShapes,
+  polygon: Polygon,
+  cube_stack: CubeStack,
+  tables_row: TablesRow,
 };
 
-/** Stacked-fraction display is not implemented yet either. */
 export function isRenderable(exercise) {
-  if (exercise.data?.display) return false;
   return !exercise.visual || exercise.visual.kind in RENDERERS;
 }
 
