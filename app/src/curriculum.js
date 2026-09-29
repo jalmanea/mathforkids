@@ -46,6 +46,17 @@ export function lessonsFor(grade, semester) {
   return unitsFor(grade, semester).flatMap((u) => u.lessons);
 }
 
+const ORDINAL = { 1: 'الأول', 2: 'الثاني', 3: 'الثالث' };
+
+/** Every grade/semester in the curriculum, e.g. { grade: 2, semester: 1, grade_label: 'الصف الثاني', semester_label: 'الفصل الأول' }. */
+export const terms = curriculum.grades.flatMap((g) =>
+  g.semesters.map((s) => ({ grade: g.grade, semester: s.semester, grade_label: `الصف ${ORDINAL[g.grade]}`, semester_label: `الفصل ${ORDINAL[s.semester]}` })),
+);
+
+export function termLabel(grade, semester) {
+  return `الصف ${ORDINAL[grade]}، الفصل ${ORDINAL[semester]}`;
+}
+
 export function stepsOf(lesson) {
   return stepsFor(difficultiesOf(lesson));
 }

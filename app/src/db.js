@@ -4,7 +4,7 @@
 //   sessions  one row per practice session
 //   attempts  AttemptLog records (src/logging/attempt-log.js) plus `points`
 //   progress  per-lesson adaptive step, counters and stars
-//   settings  key/value rows: theme, sound, readAloud, pin, dailyGoal, grade, semester, lastLessonId
+//   settings  key/value rows: theme, sound, readAloud, pin, dailyGoal, grade, semester, lastLessons
 
 import Dexie from 'dexie';
 import { DEFAULT_LEARNER_ID } from '../../src/index.js';
@@ -30,7 +30,7 @@ export const DEFAULT_SETTINGS = {
   dailyGoal: DEFAULT_DAILY_GOAL,
   grade: 3,
   semester: 1,
-  lastLessonId: null, // the lesson the child last chose (reviews don't count)
+  lastLessons: {}, // "grade-semester" -> lesson the child last chose there (reviews don't count)
 };
 
 /** First launch: learner row and persistent storage (so iOS does not evict the logs). */
