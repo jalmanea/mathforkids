@@ -16,8 +16,11 @@ const SYMBOLS = [
   [/\s○\s/g, ' أيّ رمز '],
 ];
 
+const FRACTION = /⁦([^⁩/]+)\/([^⁩]+)⁩/g;
+
 export function speakableText(text) {
-  let s = fromArabicDigits(text).replace(ISOLATES, '');
+  // "٣/٤" is read "٣ على ٤", the way the fraction is said aloud in class.
+  let s = fromArabicDigits(text).replace(FRACTION, '$1 على $2').replace(ISOLATES, '');
   for (const [re, word] of SYMBOLS) s = s.replace(re, word);
   return s.replace(/\s+/g, ' ').trim();
 }
