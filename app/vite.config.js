@@ -29,7 +29,7 @@ export default defineConfig({
       manifest: {
         name: 'رياضياتي',
         short_name: 'رياضياتي',
-        description: 'تمارين رياضيات للصف الثالث الابتدائي',
+        description: 'تمارين الرياضيات والعلوم للصفين الثاني والثالث الابتدائي',
         lang: 'ar',
         dir: 'rtl',
         display: 'standalone',

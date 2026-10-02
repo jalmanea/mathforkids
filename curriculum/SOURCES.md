@@ -1,6 +1,6 @@
 # Curriculum sources and verification
 
-This file records where `curriculum.json` came from, how much of it was checked against the books, and what is still uncertain.
+This file records where `curriculum.json` (math) and `science.json` came from, how much of each was checked against the books, and what is still uncertain. Math comes first; [science](#science) is at the end.
 
 ## Edition and semester structure
 
@@ -103,3 +103,61 @@ This file records where `curriculum.json` came from, how much of it was checked 
 - Elapsed time: grade 3 has one light item on p. 107. There is no lesson on it.
 - Unit-conversion drills: the book states the conversions but doesn't drill them.
 - Drawing tasks: draw the axes of symmetry, complete a symmetric figure, build a graph. These need interactive UI (Phase 2). The generators produce the reading and counting versions instead.
+
+## Science
+
+`science.json` covers العلوم for grades 2 and 3, in the same two-semester edition.
+
+### Structure
+
+- **Both grades:** part 1 has units 1–3 (chapters 1–6); part 2 has units 4–6 (chapters 7–12). Each chapter has two lessons, except grade 3 chapter 12, which has three.
+- **In the JSON, a "unit" is a textbook chapter (الفصل),** as in math. The textbook unit (الوحدة) is kept in `book_unit`.
+- **Grade 3 unit 6 changed in the current edition.** It is now الشغل والطاقة (الشغل، الآلات البسيطة، الصوت، الضوء، الكهرباء). Listings from 1442–1446 still show القوى والطاقة with الموقع والحركة and القوى. **Don't trust those.**
+
+### Sources
+
+| What | Source | Notes |
+|---|---|---|
+| Unit, chapter and lesson titles | mnhaji.com, wajibati.net, sahl.io, beadaya.com | Each title appears in two or three of these |
+| Lesson vocabulary and facts | sahl.io lesson pages | They mirror the book's headings and vocabulary |
+| Cross-checks | hulul.online, mnhaji.com chapter pages | Mostly grade 3 |
+
+- **No PDF was read.** Unlike math, nothing was checked against the book pages. The official file names were not found; only renamed third-party mirrors turned up.
+- **Pages were read through a summarizer,** so definitions are close to the book's wording, not guaranteed to match it.
+
+### Verification levels (`source.confidence` on each lesson)
+
+- **Titles and order (all 49 lessons):** confirmed by at least two listings.
+- **`two_sources` (21 lessons):** vocabulary and facts found in two independent places. 19 are in grade 3; chapters 5–8 match the book's glossary text.
+- **`single_source` (28 lessons):** taken from one lesson summary. This is 22 of grade 2's 24 lessons.
+- **Which lesson a word belongs to** is partly inferred, because the source lists vocabulary per chapter.
+
+### What was left out on purpose
+
+These appeared in summaries but could not be confirmed as book text, so no question uses them:
+
+- Moon counts and orbit times of the planets, and gestation lengths.
+- "١١٨ عنصرًا", and the formula الشغل = القوة × المسافة.
+- Names of the parts of the eye, أغلفة الأرض in grade 2, and the Earth as a magnet.
+- Wind speeds of hurricanes, and example cities for climate other than الرياض.
+- Semi-transparent objects are in the book but not asked, because everyday examples are easy to argue about.
+
+### Flagged science lessons (see `flags` in the JSON)
+
+| Lesson | Kind | Issue |
+|---|---|---|
+| sci-g2-s1-u2-l1 | constraint_inferred | Book wording for الزواحف، البرمائيات، الأسماك، الحشرات not captured; asked only by sorting well-known animals |
+| sci-g2-s1-u3-l2 | constraint_inferred | Organisms in the land food chain completed from a summary |
+| sci-g2-s1-u6-l2 | constraint_inferred | Grade 2 wording of الدبال not captured; not asked by definition |
+| sci-g2-s2-u9-l1 | constraint_inferred | Grade 2 wording of الكتلة borrowed from grade 3 |
+| sci-g3-s1-u3-l1 | constraint_inferred | Book words for herbivores, carnivores and omnivores not confirmed; not asked |
+| sci-g3-s1-u3-l2 | ambiguous_skill | Only التكيف and التخفي are confirmed vocabulary |
+| sci-g3-s2-u11-l1 | constraint_inferred | New lesson; definition of القوة assumed |
+| sci-g3-s2-u11-l2 | constraint_inferred | New lesson; number of simple machine types not confirmed |
+| sci-g3-s2-u12-l2 | source_conflict | معتم vs غير شفاف |
+| sci-g3-s2-u12-l3 | source_conflict | Title الكهرباء vs الكهرباء من حولنا |
+
+### Not in the bank yet
+
+- Pictures. Every science question is text; nothing asks the child to read a diagram.
+- The skills pages (مهارات الاستقصاء), the reading pages, and the اعمل كالعلماء activities.

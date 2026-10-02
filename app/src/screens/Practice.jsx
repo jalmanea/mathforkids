@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from 'preact/hooks';
-import { generateExercise, startAttempt, recordResponse, finishAttempt } from '../../../src/index.js';
+import { startAttempt, recordResponse, finishAttempt } from '../../../src/index.js';
 import { db, progressOf } from '../db.js';
-import { curriculum, lessonById, lessonsFor, stepsOf } from '../curriculum.js';
+import { generate, lessonById, lessonsFor, stepsOf, termKey } from '../curriculum.js';
 import { inputFor } from '../game/adaptive.js';
 import { interactionFor, applyInteraction } from '../game/interaction.js';
 import { Interaction } from '../interactions.jsx';
@@ -53,8 +53,8 @@ export function Practice({ app, lessonId }) {
     const steps = stepsOf(lesson);
     const prog = progressOf(progRef.current, lesson.id);
     const step = steps[Math.min(prog.adaptive.step, steps.length - 1)];
-    let ex = generateExercise(curriculum, lesson.id, step.tier);
-    for (let k = 0; k < 5 && ex.prompt === prevPrompt; k++) ex = generateExercise(curriculum, lesson.id, step.tier);
+    let ex = generate(lesson.id, step.tier);
+    for (let k = 0; k < 5 && ex.prompt === prevPrompt; k++) ex = generate(lesson.id, step.tier);
     // On the top step, exercises that have one get an interactive answer (the child builds it).
     const interaction = step.input === 'keypad' ? interactionFor(ex) : null;
     if (interaction) ex = applyInteraction(ex, interaction);
@@ -70,7 +70,8 @@ export function Practice({ app, lessonId }) {
   }, []);
 
   useEffect(() => {
-    const lessons = lessonsFor(settings.grade, settings.semester);
+    const l = lessonById.get(lessonId);
+    const lessons = lessonsFor(l.subject, l.grade, l.semester);
     const session = {
       session_id: uid(),
       learner_id: 'default',
@@ -80,8 +81,7 @@ export function Practice({ app, lessonId }) {
       planned: length,
     };
     db.sessions.put(session);
-    const l = lessonById.get(lessonId);
-    app.updateSetting('lastLessons', { ...settings.lastLessons, [`${l.grade}-${l.semester}`]: lessonId });
+    app.updateSetting('lastLessons', { ...settings.lastLessons, [termKey(l.subject, l.grade, l.semester)]: lessonId });
     sessionRef.current = {
       ...session,
       plan: planSession({ lessonId, reviewPool: reviewPoolFor(lessonId, lessons, progRef.current), attempts: app.attempts, length }),

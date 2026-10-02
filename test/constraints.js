@@ -44,6 +44,11 @@ const operandPairOk = (A, [x, y], p) => {
 };
 
 export const CONSTRAINTS = {
+  'sci.quiz': (ex, p, A) => {
+    if (p.forms) A.ok(p.forms.includes(ex.data.form), `form ${ex.data.form} not in ${p.forms}`);
+    // term → definition and level-2 questions are kept out of the first tier
+    if ((p.level ?? 1) < 2) A.notEqual(ex.data.form, 'term.meaning');
+  },
   'num.place_value': (ex, p, A) => {
     const x = ex.data.number ?? ex.data.terms.reduce((s, t) => s + t, 0);
     A.ok(inR(x, p.range), `${x} not in ${p.range}`);

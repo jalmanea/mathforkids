@@ -60,9 +60,15 @@ export function generateExercise(curriculum, lessonId, difficulty, opts = {}) {
   return gen({ lesson, difficulty, params: tier.params, rng });
 }
 
-/** Node-only convenience loader. */
-export async function loadCurriculum(path) {
+/** One curriculum file per subject. Lesson ids are unique across subjects (science ids start with "sci-"). */
+export const SUBJECT_FILES = { math: 'curriculum.json', science: 'science.json' };
+
+/**
+ * Node-only convenience loader.
+ * @param {string|URL} [which]  a subject key ('math', 'science') or a path; default math
+ */
+export async function loadCurriculum(which = 'math') {
   const { readFile } = await import('node:fs/promises');
-  const url = path ?? new URL('../curriculum/curriculum.json', import.meta.url);
+  const url = SUBJECT_FILES[which] ? new URL(`../curriculum/${SUBJECT_FILES[which]}`, import.meta.url) : which;
   return JSON.parse(await readFile(url, 'utf8'));
 }

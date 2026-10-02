@@ -1,11 +1,12 @@
-# Saudi math practice: exercise engine and app
+# Saudi math and science practice: exercise engine and app
 
-A math practice app for **grade 2 and grade 3 of the Saudi national curriculum** (الصف الثاني والثالث الابتدائي).
+A practice app for **math and science in grade 2 and grade 3 of the Saudi national curriculum** (الصف الثاني والثالث الابتدائي).
 
 - **Phase 1, the engine (`src/`, `curriculum/`):**
   - a machine-readable curriculum map ([curriculum/curriculum.json](curriculum/curriculum.json)), both semesters of both grades;
   - one randomized generator per lesson;
   - a data model for logging each attempt.
+  - **Science** ([curriculum/science.json](curriculum/science.json)) uses the same map, but each lesson carries a written question bank instead of number ranges. See [Science](#science) below.
 - **Phase 2, the app (`app/`):** an Arabic, RTL web app. It installs to the iPhone home screen, works offline, and adds points, streaks, levels and a parent view. See [The practice app](#the-practice-app-phase-2) below.
 
 ```bash
@@ -34,6 +35,7 @@ npm run sample -- g2-s1-u5-l7 2 5
 
 ```
 curriculum/curriculum.json   grade → semester → unit → lesson map; each lesson names its generator + difficulty params
+curriculum/science.json      the same map for science (العلوم); each lesson holds its question bank in `content`
 curriculum/SOURCES.md        sources, verification status, answers to the open questions, flagged lessons
 src/index.js                 public API: generateExercise, listLessons, loadCurriculum, logging helpers
 src/registry.js              generator key → function (plus the `mix` generator)
@@ -44,7 +46,8 @@ src/core/choices.js          multiple-choice assembly and common-mistake helpers
 src/core/exercise.js         the Exercise object (makeExercise)
 src/core/random.js           seedable RNG
 src/generators/*.js          generator families: numbers, addition, subtraction, multiplication,
-                             division, fractions, measurement (money/time/length/area/…), geometry, data, word
+                             division, fractions, measurement (money/time/length/area/…), geometry, data, word,
+                             science (one generator, `sci.quiz`, driven by the lesson's content)
 src/logging/attempt-log.js   performance-log data model (pure functions)
 test/                        validation suite + independent checkers
 scripts/sample.js            print sample exercises
@@ -140,6 +143,25 @@ const same = generateExercise(curriculum, 'g2-s1-u5-l7', 2, { seed: ex.seed }); 
 
    Checkers must not import generator code. The suite fails if any skill has no independent check.
 
+## Science
+
+Science has 49 lessons: 24 in grade 2 and 25 in grade 3, in chapters 1–6 (semester 1) and 7–12 (semester 2) of each grade.
+
+- **Loading:** `loadCurriculum('science')`. Lesson ids start with `sci-` (e.g. `sci-g3-s1-u2-l1`), so they never collide with math ids and can share the same logs and progress tables.
+- **One generator, `sci.quiz`.** A science answer can't be computed, so each lesson has a `content` bank and the generator varies what it asks from it:
+
+  | In `content` | Shape | Questions it produces |
+  |---|---|---|
+  | `terms` | `{ term, def }` | the definition is shown, choose the word; from tier 2, the word is shown, choose the definition |
+  | `groups` | `{ which?, categories: [{ name, pick, members }] }` | `pick` asks for a member of one category; `which` (with `{x}`) asks which category a member belongs to |
+  | `sequences` | `{ name, steps }` | what comes first, and what comes after a step |
+  | `questions` | `{ q, a, wrong, level? }` | the written question, with three of its wrong options |
+
+- **Tiers:** every lesson has tiers 1 and 2 (`params.level`). Tier 2 adds word-to-definition questions and the written questions marked `level: 2`. Answers are words, so science is always multiple choice.
+- **Checks:** `test/science.test.js` validates the bank itself: Arabic only, no option that is also correct, nothing sorted into two categories, no definition that contains its own word, and at least 8 things to ask at each tier. The generated exercises go through the same suite as math, with checkers that read the bank straight from the JSON.
+- **Adding or fixing a question:** edit the lesson's `content` in `science.json` and run `npm test`. No code changes are needed.
+- **The content is not yet checked against the book pages.** See [curriculum/SOURCES.md](curriculum/SOURCES.md#science).
+
 ## Performance logging (data model only in Phase 1)
 
 `src/logging/attempt-log.js` defines `Learner`, `Session` and `AttemptLog`, with the pure helpers `startAttempt`, `recordResponse` and `finishAttempt`.
@@ -179,7 +201,7 @@ npm run build
 ### Stack
 
 - **Libraries:** Vite, Preact, `vite-plugin-pwa` (a Workbox service worker that precaches everything) and Dexie (IndexedDB). They are all dependencies of the root `package.json`; the engine in `src/` stays dependency-free.
-- **Engine import:** the app imports the engine from `../src/index.js` unchanged. `curriculum.json` is bundled into the JavaScript, so it works offline.
+- **Engine import:** the app imports the engine from `../src/index.js` unchanged. `curriculum.json` and `science.json` are bundled into the JavaScript, so it works offline.
 - **Font:** Tajawal, self-hosted in `app/public/fonts/` (SIL OFL, licence alongside).
 - **Icons:** drawn by `npm run icons` (`app/scripts/make-icons.js`), which needs no image library.
 
@@ -214,8 +236,9 @@ app/src/theme.css                tokens per theme: neutral, and "stitch" (colour
 
 - **Fractions:** prompts, choices and revealed answers render every isolated fraction stacked (`MathText`); read-aloud says "٣ على ٤".
 - **Visuals never give the answer away:** data pictures don't print the values asked about, a "part of a set" question shows the equal groups uncoloured, the missing shape in a pattern is a "؟" box, and composing shapes shows the whole as an undivided outline.
-- **Choosing a term:** the child picks the grade and semester at the top of the lesson map (e.g. to revise grade 2). The home screen's "continue" remembers the last chosen lesson per term. Stars, points and the streak are shared across terms.
-- **Lessons shown:** a lesson appears on the map only if the app can render everything it generates. `curriculum.js` samples each tier and checks every `visual.kind` against the renderer registry. Every grade 2 and grade 3 lesson (194) is playable.
+- **Choosing a subject:** the الرياضيات / العلوم switch is on the home screen and the lesson map (and in the parent settings). Points, the level, the streak and the daily goal are shared between the two subjects.
+- **Choosing a term:** the child picks the grade and semester at the top of the lesson map (e.g. to revise grade 2). The home screen's "continue" remembers the last chosen lesson per subject and term. Stars, points and the streak are shared across terms.
+- **Lessons shown:** a lesson appears on the map only if the app can render everything it generates. `curriculum.js` samples each tier and checks every `visual.kind` against the renderer registry. Every grade 2 and grade 3 lesson (194 math, 49 science) is playable.
 - **Answering:**
   - A child gets 3 tries. A wrong choice is greyed out, and after the third miss the answer is shown.
   - Every response goes through `recordResponse`. The attempt row is written as soon as the exercise is shown, updated on each response, and closed as `correct`, `gave_up` or (on leaving mid-exercise) `skipped`.
