@@ -43,7 +43,7 @@ function shapePoints(name) {
 }
 
 /** One plane shape as SVG children in a 120×120 box. */
-function ShapeGlyph({ name, cls = 'shape' }) {
+export function ShapeGlyph({ name, cls = 'shape' }) {
   if (name === 'دائرة') return <circle cx="60" cy="60" r="50" class={cls} />;
   if (name === 'قلب') return <path d="M60,104 C20,76 6,52 18,32 C30,12 54,16 60,36 C66,16 90,12 102,32 C114,52 100,76 60,104 Z" class={cls} />;
   const pts = shapePoints(name);

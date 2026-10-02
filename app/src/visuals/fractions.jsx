@@ -36,8 +36,11 @@ export function MathText({ text }) {
  * `parts: null` draws the whole with no divisions; `shaded: null` leaves it
  * unshaded. Both are used when that number is the blank to find.
  */
-export function FractionModel({ model, parts, shaded, width = 220 }) {
-  if (model === 'circle') return <Pie parts={parts} shaded={shaded} />;
+export function FractionModel({ model, parts, shaded, width = 220, selected, onPart }) {
+  // Interactive use: `selected` (a Set of part indexes) replaces `shaded`, and tapping a part calls onPart(i).
+  const isOn = (i) => (selected ? selected.has(i) : parts && shaded != null && i < shaded);
+  const tap = (i) => (onPart ? { onClick: () => onPart(i), style: { cursor: 'pointer' } } : {});
+  if (model === 'circle') return <Pie parts={parts} isOn={isOn} tap={tap} />;
   const H = model === 'strip' ? 36 : 90;
   const W = model === 'strip' ? width : Math.min(width, 180);
   const n = parts ?? 1;
@@ -47,16 +50,16 @@ export function FractionModel({ model, parts, shaded, width = 220 }) {
     <svg viewBox={`0 0 ${W} ${H + 4}`} width={W} class="frac-model" role="img">
       {Array.from({ length: n }, (_, i) => (
         <rect key={i} x={2 + W - 4 - (i + 1) * w} y="2" width={w} height={H}
-          class={parts && shaded != null && i < shaded ? 'part on' : 'part'} />
+          class={isOn(i) ? 'part on' : 'part'} {...tap(i)} />
       ))}
       {parts == null && <text x={W / 2} y={H / 2 + 9} text-anchor="middle" class="frac-q">؟</text>}
     </svg>
   );
 }
 
-function Pie({ parts, shaded }) {
+function Pie({ parts, isOn, tap }) {
   const R = 60, c = 64;
-  if (parts === 1) return <svg viewBox="0 0 128 128" width="128" class="frac-model"><circle cx={c} cy={c} r={R} class={shaded ? 'part on' : 'part'} /></svg>;
+  if (parts === 1) return <svg viewBox="0 0 128 128" width="128" class="frac-model"><circle cx={c} cy={c} r={R} class={isOn(0) ? 'part on' : 'part'} {...tap(0)} /></svg>;
   const pt = (k) => {
     const a = -Math.PI / 2 + (2 * Math.PI * k) / parts;
     return `${(c + R * Math.cos(a)).toFixed(2)},${(c + R * Math.sin(a)).toFixed(2)}`;
@@ -64,7 +67,7 @@ function Pie({ parts, shaded }) {
   return (
     <svg viewBox="0 0 128 128" width="128" class="frac-model" role="img">
       {Array.from({ length: parts }, (_, i) => (
-        <path key={i} d={`M${c},${c} L${pt(i)} A${R},${R} 0 0 1 ${pt(i + 1)} Z`} class={shaded != null && i < shaded ? 'part on' : 'part'} />
+        <path key={i} d={`M${c},${c} L${pt(i)} A${R},${R} 0 0 1 ${pt(i + 1)} Z`} class={isOn(i) ? 'part on' : 'part'} {...tap(i)} />
       ))}
     </svg>
   );

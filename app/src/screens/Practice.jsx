@@ -3,6 +3,8 @@ import { generateExercise, startAttempt, recordResponse, finishAttempt } from '.
 import { db, progressOf } from '../db.js';
 import { curriculum, lessonById, lessonsFor, stepsOf } from '../curriculum.js';
 import { inputFor } from '../game/adaptive.js';
+import { interactionFor, applyInteraction } from '../game/interaction.js';
+import { Interaction } from '../interactions.jsx';
 import { scoreExercise } from '../game/points.js';
 import { updateProgress } from '../game/progress.js';
 import { planSession } from '../game/session.js';
@@ -38,7 +40,7 @@ export function Practice({ app, lessonId }) {
   const sessionRef = useRef(null);
 
   const [index, setIndex] = useState(0);
-  const [cur, setCur] = useState(null); // { ex, lesson, stepCount, input, log, review }
+  const [cur, setCur] = useState(null); // { ex, lesson, stepCount, input, interaction, log, review }
   const [typed, setTyped] = useState('');
   const [wrong, setWrong] = useState([]);
   const [phase, setPhase] = useState('answering'); // answering | correct | revealed
@@ -53,9 +55,13 @@ export function Practice({ app, lessonId }) {
     const step = steps[Math.min(prog.adaptive.step, steps.length - 1)];
     let ex = generateExercise(curriculum, lesson.id, step.tier);
     for (let k = 0; k < 5 && ex.prompt === prevPrompt; k++) ex = generateExercise(curriculum, lesson.id, step.tier);
+    // On the top step, exercises that have one get an interactive answer (the child builds it).
+    const interaction = step.input === 'keypad' ? interactionFor(ex) : null;
+    if (interaction) ex = applyInteraction(ex, interaction);
     const log = startAttempt({ exercise: ex, lesson, sessionId: sessionRef.current.session_id });
     db.attempts.put(log);
-    setCur({ ex, lesson, stepCount: steps.length, input: inputFor(step, ex.answer), log, review: item.review });
+    const input = interaction ? 'interactive' : inputFor(step, ex.answer);
+    setCur({ ex, lesson, stepCount: steps.length, input, interaction, log, review: item.review });
     setTyped('');
     setWrong([]);
     setShake(0);
@@ -183,7 +189,9 @@ export function Practice({ app, lessonId }) {
 
       <div class={`feedback ${feedback.kind}`} role="status" aria-live="polite">{feedback.text}</div>
 
-      {cur.input === 'keypad' ? (
+      {cur.input === 'interactive' ? (
+        <Interaction key={ex.exercise_id} it={cur.interaction} answer={ex.answer} done={done} reveal={phase === 'revealed'} onSubmit={answer} />
+      ) : cur.input === 'keypad' ? (
         <>
           <div class={`keypad-display ${phase === 'correct' ? 'right' : ''}`} aria-label="إجابتك">
             {phase === 'revealed' ? ex.answer : typed}

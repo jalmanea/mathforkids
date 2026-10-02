@@ -202,6 +202,8 @@ app/src/game/                    pure game logic (tested in app/test/):
   adaptive.js                      tier ladder: choice below the top tier, keypad at the top; 5 in a row up, 3 of 5 missed down
   session.js                       ~80% chosen lesson, ~20% review of earlier lessons weighted by weak skills
   stats.js                         parent-view aggregations
+  interaction.js                   interactive answers: which exercises get one, and how a construction is checked
+app/src/interactions.jsx         touch UI for interactive answers (drag to order, clock hands, pay, symmetry lines, shade)
 app/src/db.js                    Dexie tables: learners, sessions, attempts, progress, settings; backup/restore/reset
 app/src/speech.js                read-aloud (speechSynthesis, Arabic voice; hidden if the device has none)
 app/src/sound.js                 synthesized sound effects per theme (no audio files)
@@ -217,6 +219,17 @@ app/src/theme.css                tokens per theme: neutral, and "stitch" (colour
 - **Answering:**
   - A child gets 3 tries. A wrong choice is greyed out, and after the third miss the answer is shown.
   - Every response goes through `recordResponse`. The attempt row is written as soon as the exercise is shown, updated on each response, and closed as `correct`, `gave_up` or (on leaving mid-exercise) `skipped`.
+- **Interactive answers (top step only):** some exercises are turned around so the child builds the answer. The engine's exercise is reused; only the prompt changes, and the construction is converted to a value in the same format as `answer`, so logging and checking are unchanged. The logged exercise carries the new prompt and `data.interaction`.
+
+  | Interaction | Exercises | Share at the top step |
+  |---|---|---|
+  | Drag rows into order | ordering numbers and fractions | all |
+  | Move the clock hands to a time | reading the clock | about 70% |
+  | Tap notes and coins to pay an amount | counting money | about 50% (the rest use the keypad) |
+  | Tap every line of symmetry | counting axes of symmetry | about 70% |
+  | Colour parts to show a fraction | naming the shaded fraction | about 70% |
+
+  After three misses the solution is shown on the same picture.
 - **Keypad tier:** single-tier lessons get two steps (choice, then keypad), so a child never starts on the keypad. The keypad is used only when the answer is a plain number; comparisons, orderings and yes/no answers stay multiple choice.
 - **Session length:** equals the daily goal (5–30).
 - **Data stays on the phone:**
