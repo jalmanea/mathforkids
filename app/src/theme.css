@@ -434,3 +434,34 @@ h1, h2, h3 { margin: 0; line-height: 1.3; }
 .cube-left { fill: #7ea6e3; stroke: #274f8f; stroke-width: 1.2; stroke-linejoin: round; }
 .cube-right { fill: #a3c0ee; stroke: #274f8f; stroke-width: 1.2; stroke-linejoin: round; }
 .table-top { fill: #d9b78a; stroke: #8a6a3a; stroke-width: 2; }
+
+/* Interactive answers */
+.hint { margin: 6px 0 0; text-align: center; font-size: 14px; color: var(--muted); }
+.order-list { position: relative; touch-action: none; }
+.order-row {
+  position: absolute; inset-inline: 0; top: 0; height: 54px;
+  display: flex; align-items: center; gap: 12px; padding: 0 14px;
+  background: var(--surface); border: 2px solid var(--border); border-radius: 16px; box-shadow: var(--shadow);
+  font-size: 26px; font-weight: 800; cursor: grab; touch-action: none; transition: transform 0.15s ease;
+}
+.order-row.lifted { transition: none; z-index: 2; border-color: var(--primary); box-shadow: 0 8px 20px rgba(0, 0, 0, 0.22); cursor: grabbing; }
+.order-rank { width: 30px; height: 30px; border-radius: 50%; display: grid; place-items: center; background: var(--primary-soft); color: var(--primary); font-size: 16px; flex: none; }
+.order-item { flex: 1; text-align: center; }
+.order-grip { color: var(--muted); font-size: 20px; letter-spacing: -2px; }
+.clock-set { display: grid; justify-items: center; }
+.clock-set .clock { width: min(260px, 70vw); height: auto; touch-action: none; cursor: pointer; }
+.pay-tray { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+.pay-item { padding: 4px; border-radius: 14px; border: 3px solid transparent; background: transparent; line-height: 0; position: relative; }
+.pay-item[aria-pressed='true'] { border-color: var(--success); background: var(--success-soft); }
+.pay-item[aria-pressed='true']::after {
+  content: '✓'; position: absolute; top: -8px; inset-inline-start: -8px; width: 22px; height: 22px; border-radius: 50%;
+  background: var(--success); color: #fff; font-size: 14px; line-height: 22px; font-weight: 800; text-align: center;
+}
+.sym-pick { display: grid; justify-items: center; }
+.sym-pick svg { width: min(260px, 70vw); height: auto; }
+.sym-line { stroke: var(--muted); stroke-width: 1.6; stroke-dasharray: 5 4; }
+.sym-line.on { stroke: var(--accent); stroke-width: 3.5; stroke-dasharray: none; }
+.sym-hit { stroke: transparent; stroke-width: 16; cursor: pointer; }
+.shade-pick { display: flex; justify-content: center; }
+.shade-pick .frac-model { width: min(100%, 300px); height: auto; }
+.shade-pick .frac-model .part { cursor: pointer; }

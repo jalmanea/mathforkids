@@ -11,35 +11,38 @@ const NOTE_COLORS = { 5: '#8e6cb8', 10: '#9a6b43', 50: '#3f8f5a', 100: '#c4546e'
 /** Riyal after a number: ٥ ريالات، ٥٠ ريالًا، ١٠٠ ريال. */
 const riyals = (v) => (v <= 10 ? 'ريالات' : v % 100 === 0 ? 'ريال' : 'ريالًا');
 
+/** One coin (1 or 2 riyals) or note. */
+export function MoneyItem({ value }) {
+  if (value <= 2) {
+    return (
+      <svg viewBox="0 0 56 56" width="56" height="56" direction="ltr" class="coin" role="img">
+        <circle cx="28" cy="28" r="26" class={value === 2 ? 'coin-2' : 'coin-1'} />
+        <circle cx="28" cy="28" r="20" class="coin-ring" />
+        <text x="28" y="30" text-anchor="middle" class="coin-v">{ar(value)}</text>
+        <text x="28" y="43" text-anchor="middle" class="coin-u">{value === 2 ? 'ريالان' : 'ريال'}</text>
+      </svg>
+    );
+  }
+  return (
+    <svg viewBox="0 0 110 56" width="110" height="56" direction="ltr" class="note" role="img">
+      <rect x="1" y="1" width="108" height="54" rx="6" fill={NOTE_COLORS[value] ?? '#777'} />
+      <rect x="6" y="6" width="98" height="44" rx="4" class="note-inner" />
+      <text x="20" y="36" text-anchor="middle" class="note-corner">{ar(value)}</text>
+      <text x="68" y="28" text-anchor="middle" class="note-v">{ar(value)}</text>
+      <text x="68" y="44" text-anchor="middle" class="note-u">{riyals(value)}</text>
+    </svg>
+  );
+}
+
 export function Money({ items }) {
   const sorted = [...items].sort((a, b) => b.value - a.value);
-  return (
-    <div class="money">
-      {sorted.map((it, i) =>
-        it.form === 'coin' ? (
-          <svg key={i} viewBox="0 0 56 56" width="56" height="56" direction="ltr" class="coin" role="img">
-            <circle cx="28" cy="28" r="26" class={it.value === 2 ? 'coin-2' : 'coin-1'} />
-            <circle cx="28" cy="28" r="20" class="coin-ring" />
-            <text x="28" y="30" text-anchor="middle" class="coin-v">{ar(it.value)}</text>
-            <text x="28" y="43" text-anchor="middle" class="coin-u">{it.value === 2 ? 'ريالان' : 'ريال'}</text>
-          </svg>
-        ) : (
-          <svg key={i} viewBox="0 0 110 56" width="110" height="56" direction="ltr" class="note" role="img">
-            <rect x="1" y="1" width="108" height="54" rx="6" fill={NOTE_COLORS[it.value] ?? '#777'} />
-            <rect x="6" y="6" width="98" height="44" rx="4" class="note-inner" />
-            <text x="20" y="36" text-anchor="middle" class="note-corner">{ar(it.value)}</text>
-            <text x="68" y="28" text-anchor="middle" class="note-v">{ar(it.value)}</text>
-            <text x="68" y="44" text-anchor="middle" class="note-u">{riyals(it.value)}</text>
-          </svg>
-        ),
-      )}
-    </div>
-  );
+  return <div class="money">{sorted.map((it, i) => <MoneyItem key={i} value={it.value} />)}</div>;
 }
 
 // ---------- Analogue clock ----------
 
-export function Clock({ hour, minute }) {
+/** `svgProps` lets the hand-setting interaction attach pointer handlers. */
+export function Clock({ hour, minute, svgProps }) {
   const c = 100, R = 92;
   const hand = (angleDeg, len) => {
     const a = ((angleDeg - 90) * Math.PI) / 180;
@@ -48,7 +51,7 @@ export function Clock({ hour, minute }) {
   const hourAngle = ((hour % 12) + minute / 60) * 30;
   const minuteAngle = minute * 6;
   return (
-    <svg viewBox="0 0 200 200" width="200" direction="ltr" class="clock" role="img">
+    <svg viewBox="0 0 200 200" width="200" direction="ltr" class="clock" role="img" {...svgProps}>
       <circle cx={c} cy={c} r={R} class="clock-face" />
       {Array.from({ length: 60 }, (_, i) => {
         const a = (i * 6 - 90) * (Math.PI / 180);
