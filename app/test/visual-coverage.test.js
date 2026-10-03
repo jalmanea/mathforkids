@@ -12,13 +12,15 @@ async function registeredKinds() {
 
 test('every visual kind the engine produces has a renderer (so no lesson is hidden)', async () => {
   const kinds = await registeredKinds();
-  const curriculum = await loadCurriculum();
   const missing = new Map();
-  for (const lesson of listLessons(curriculum)) {
-    for (const d of difficultiesOf(lesson)) {
-      for (let seed = 1; seed <= 30; seed++) {
-        const kind = generateExercise(curriculum, lesson.id, d, { seed }).visual?.kind;
-        if (kind && !kinds.has(kind)) missing.set(kind, lesson.id);
+  for (const subject of ['math', 'science']) {
+    const curriculum = await loadCurriculum(subject);
+    for (const lesson of listLessons(curriculum)) {
+      for (const d of difficultiesOf(lesson)) {
+        for (let seed = 1; seed <= 30; seed++) {
+          const kind = generateExercise(curriculum, lesson.id, d, { seed }).visual?.kind;
+          if (kind && !kinds.has(kind)) missing.set(kind, lesson.id);
+        }
       }
     }
   }

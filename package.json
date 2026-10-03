@@ -2,7 +2,7 @@
   "name": "saudi-math-engine",
   "version": "0.1.0",
   "private": true,
-  "description": "Saudi grades 2–3 math: curriculum map, exercise engine (src/) and the installable practice app (app/).",
+  "description": "Saudi grades 2–3 math and science: curriculum maps, exercise engine (src/) and the installable practice app (app/).",
   "type": "module",
   "main": "src/index.js",
   "scripts": {

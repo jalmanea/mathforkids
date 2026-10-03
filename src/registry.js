@@ -9,6 +9,7 @@ import measurement from './generators/measurement.js';
 import geometry from './generators/geometry.js';
 import data from './generators/data.js';
 import word from './generators/word.js';
+import science from './generators/science.js';
 
 export const GENERATORS = {
   ...numbers,
@@ -21,6 +22,7 @@ export const GENERATORS = {
   ...geometry,
   ...data,
   ...word,
+  ...science,
   /**
    * Mixed practice: pick one entry from a pool of {generator, params}.
    * Used by investigation (استقصاء) and review/practice lessons, which draw on the unit's skills.

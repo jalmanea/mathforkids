@@ -1,11 +1,11 @@
 import { Stars, Icon, ar, count } from '../components.jsx';
 import { unitsFor, lessonsFor, terms } from '../curriculum.js';
-import { continueLesson, lastChosen } from './Home.jsx';
+import { continueLesson, lastChosen, SubjectPicker } from './Home.jsx';
 
 export function LessonMap({ app }) {
   const { settings, progress, go, updateSetting } = app;
-  const units = unitsFor(settings.grade, settings.semester);
-  const current = continueLesson(lessonsFor(settings.grade, settings.semester), progress, lastChosen(settings));
+  const units = unitsFor(settings.subject, settings.grade, settings.semester);
+  const current = continueLesson(lessonsFor(settings.subject, settings.grade, settings.semester), progress, lastChosen(settings));
 
   const pickTerm = async (t) => {
     await updateSetting('grade', t.grade);
@@ -19,6 +19,7 @@ export function LessonMap({ app }) {
         <button class="icon-btn" onClick={() => go({ name: 'home' })} aria-label="رجوع">{Icon.back}</button>
         <h1>خريطة الدروس</h1>
       </header>
+      <SubjectPicker value={settings.subject} onChange={(s) => updateSetting('subject', s)} />
       <nav class="terms" aria-label="الصف والفصل">
         {terms.map((t) => (
           <button key={`${t.grade}-${t.semester}`} aria-pressed={t.grade === settings.grade && t.semester === settings.semester} onClick={() => pickTerm(t)}>

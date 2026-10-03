@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'preact/hooks';
 import { db, exportAll, importAll, resetAll } from '../db.js';
-import { allLessons, lessonById, unitTitle, curriculum } from '../curriculum.js';
+import { allLessons, lessonById, unitTitle, terms as allTerms, SUBJECTS } from '../curriculum.js';
 import { dailyActivity, accuracyByUnit, needsPractice, sessionRows } from '../game/stats.js';
 import { dayKey } from '../game/days.js';
 import { Keypad, Icon, ar, count } from '../components.jsx';
@@ -200,7 +200,7 @@ function Switch({ on, onChange, label }) {
 
 function Settings({ app }) {
   const { settings: s, updateSetting, voice } = app;
-  const terms = curriculum.grades.flatMap((g) => g.semesters.map((x) => [`${g.grade}-${x.semester}`, `الصف ${ar(g.grade)}، الفصل ${ar(x.semester)}`]));
+  const terms = allTerms.map((t) => [`${t.grade}-${t.semester}`, `الصف ${ar(t.grade)}، الفصل ${ar(t.semester)}`]);
   return (
     <section class="card">
       <div class="setting">
@@ -225,6 +225,10 @@ function Settings({ app }) {
           <span>{ar(s.dailyGoal)}</span>
           <button onClick={() => updateSetting('dailyGoal', Math.max(5, s.dailyGoal - 5))} aria-label="إنقاص">−</button>
         </span>
+      </div>
+      <div class="setting">
+        <span class="name">المادة</span>
+        <Seg options={SUBJECTS.map((x) => [x.key, x.label])} value={s.subject} onChange={(v) => updateSetting('subject', v)} />
       </div>
       <div class="setting" style={{ flexWrap: 'wrap' }}>
         <span class="name">الصف والفصل</span>

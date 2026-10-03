@@ -3,7 +3,15 @@
 // These deliberately do NOT import generator code: they recompute answers from
 // the exercise's own prompt/data using separate logic and separate fact tables,
 // so a bug in a generator can't hide behind the same bug in its checker.
+import { readFileSync } from 'node:fs';
 import { fromArabicDigits } from '../src/core/digits.js';
+
+// Science answers are checked against the lesson's content bank, read here straight from the JSON.
+const SCIENCE = new Map();
+for (const g of JSON.parse(readFileSync(new URL('../curriculum/science.json', import.meta.url), 'utf8')).grades) {
+  for (const s of g.semesters) for (const u of s.units) for (const l of u.lessons) SCIENCE.set(l.id, l.content);
+}
+const others = (ex) => ex.choices.filter((c) => c !== ex.answer);
 
 const ISOLATES = /[⁦-⁩]/g;
 export const plain = (s) => fromArabicDigits(String(s).replace(ISOLATES, '')).replace(/٫/g, '.');
@@ -132,6 +140,48 @@ const frac = (f) => `${f.num}/${f.den}`;
  * Each returns nothing and asserts.
  */
 export const SKILL_CHECKERS = {
+  'sci.term': (ex, d, A) => {
+    const terms = SCIENCE.get(ex.lesson_id).terms;
+    const t = terms.find((x) => x.term === d.term);
+    A.ok(t, `unknown term ${d.term}`);
+    const [shown, asked] = d.form === 'term.name' ? ['def', 'term'] : ['term', 'def'];
+    A.ok(ex.prompt.includes(t[shown]), 'prompt does not show the term/definition');
+    A.equal(ex.answer, t[asked]);
+    for (const c of others(ex)) A.ok(terms.some((x) => x !== t && x[asked] === c), `distractor ${c} is not another term of the lesson`);
+  },
+  'sci.group.member': (ex, d, A) => {
+    const set = SCIENCE.get(ex.lesson_id).groups[d.set];
+    const cat = set.categories.find((c) => c.name === d.category);
+    A.equal(ex.prompt, cat.pick);
+    A.ok(cat.members.includes(ex.answer), `${ex.answer} is not in ${cat.name}`);
+    for (const c of others(ex)) {
+      A.ok(!cat.members.includes(c), `distractor ${c} is also in ${cat.name}`);
+      A.ok(set.categories.some((k) => k.members.includes(c)), `distractor ${c} is not in the set`);
+    }
+  },
+  'sci.group.category': (ex, d, A) => {
+    const set = SCIENCE.get(ex.lesson_id).groups[d.set];
+    A.ok(ex.prompt.includes(d.member));
+    const home = set.categories.filter((c) => c.members.includes(d.member));
+    A.equal(home.length, 1, `${d.member} is in ${home.length} categories`);
+    A.equal(ex.answer, home[0].name);
+    for (const c of others(ex)) A.ok(set.categories.some((k) => k.name === c), `distractor ${c} is not a category`);
+  },
+  'sci.seq': (ex, d, A) => {
+    const { steps } = SCIENCE.get(ex.lesson_id).sequences[d.sequence];
+    if (d.form === 'seq.first') A.equal(ex.answer, steps[0]);
+    else {
+      A.ok(ex.prompt.includes(steps[d.index]));
+      A.equal(ex.answer, steps[d.index + 1]);
+    }
+    for (const c of others(ex)) A.ok(steps.includes(c), `distractor ${c} is not a step`);
+  },
+  'sci.question': (ex, d, A) => {
+    const q = SCIENCE.get(ex.lesson_id).questions[d.question];
+    A.equal(ex.prompt, q.q);
+    A.equal(ex.answer, q.a);
+    for (const c of others(ex)) A.ok(q.wrong.includes(c), `distractor ${c} is not one of the question's`);
+  },
   'place_value.digit_value': (ex, d, A) => {
     A.equal(Math.floor(d.number / 10 ** d.place) % 10, d.digit);
     A.equal(num(ex.answer), d.digit * 10 ** d.place);

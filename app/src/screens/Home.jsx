@@ -1,11 +1,24 @@
 import { GoalRing, Icon, ar, count } from '../components.jsx';
-import { lessonsFor, termLabel } from '../curriculum.js';
+import { lessonsFor, termLabel, termKey, subjectOf, SUBJECTS } from '../curriculum.js';
 
 const unstarred = (progress) => (l) => (progress.get(l.id)?.stars ?? 0) < 3;
 
-/** The lesson last chosen in this grade/semester (reviews don't count). */
+/** The lesson last chosen in this subject's grade/semester (reviews don't count). */
 export function lastChosen(settings) {
-  return settings.lastLessons?.[`${settings.grade}-${settings.semester}`];
+  return settings.lastLessons?.[termKey(settings.subject, settings.grade, settings.semester)];
+}
+
+/** The subject switch shown on the home screen and the lesson map. */
+export function SubjectPicker({ value, onChange }) {
+  return (
+    <nav class="subjects" aria-label="المادة">
+      {SUBJECTS.map((s) => (
+        <button key={s.key} aria-pressed={s.key === value} onClick={() => onChange(s.key)}>
+          <span aria-hidden="true">{s.emoji}</span> {s.label}
+        </button>
+      ))}
+    </nav>
+  );
 }
 
 /** Lesson to continue: the last one chosen in this term, or the next one once it has 3 stars. */
@@ -19,18 +32,20 @@ export function continueLesson(lessons, progress, lastLessonId) {
 }
 
 export function Home({ app }) {
-  const { totals, settings, progress, go } = app;
-  const lessons = lessonsFor(settings.grade, settings.semester);
+  const { totals, settings, progress, go, updateSetting } = app;
+  const lessons = lessonsFor(settings.subject, settings.grade, settings.semester);
   const next = continueLesson(lessons, progress, lastChosen(settings));
   const { level, fraction } = totals.level;
 
   return (
     <main class="screen">
       <header class="topbar">
-        <h1>رياضياتي</h1>
+        <h1>{subjectOf(settings.subject).app}</h1>
         <span class="pill" aria-label="النقاط">⭐ {ar(totals.points)}</span>
         <button class="icon-btn" onClick={() => go({ name: 'parent' })} aria-label="ركن الوالدين">{Icon.lock}</button>
       </header>
+
+      <SubjectPicker value={settings.subject} onChange={(s) => updateSetting('subject', s)} />
 
       <section class="card home-hero">
         <h2>هدف اليوم</h2>

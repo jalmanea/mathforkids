@@ -16,8 +16,11 @@ const SMALL_DOMAIN = new Set([
   'geo.solids', 'geo.plane', 'geo.compare_shapes', 'geo.compose', 'geo.symmetry',
   'measure.choose_unit', 'time.estimate', 'time.sequence', 'word.simpler_problem', 'div.zero_one',
 ]);
-const curriculum = await loadCurriculum();
-const lessons = listLessons(curriculum);
+// One curriculum per subject; every lesson remembers which one it came from.
+const curricula = [await loadCurriculum('math'), await loadCurriculum('science')];
+const curriculumOf = new Map();
+for (const c of curricula) for (const l of listLessons(c)) curriculumOf.set(l.id, c);
+const lessons = curricula.flatMap((c) => listLessons(c));
 
 /** Every student-facing string in an exercise. */
 function studentText(ex) {
@@ -84,7 +87,7 @@ function assertConstraints(ex, lesson, difficulty) {
 test('curriculum: ids unique, well-formed, every generator exists', () => {
   const ids = new Set();
   for (const l of lessons) {
-    assert.match(l.id, /^g[23]-s[12]-u\d+-[lxpe]\d+$/, l.id);
+    assert.match(l.id, /^(sci-)?g[23]-s[12]-u\d+-[lxpe]\d+$/, l.id);
     assert.ok(!ids.has(l.id), `duplicate ${l.id}`);
     ids.add(l.id);
     assert.ok(/[ء-ي]/.test(l.title) && !hasWesternDigits(l.title), `title ${l.id}`);
@@ -97,13 +100,13 @@ test('curriculum: ids unique, well-formed, every generator exists', () => {
       if (key === 'mix') for (const e of l.difficulties[d].params.pool) assert.ok(GENERATORS[e.generator], `${l.id}: unknown ${e.generator}`);
     }
   }
-  for (const g of curriculum.grades) for (const s of g.semesters) for (const u of s.units) assert.ok(!hasWesternDigits(u.title), u.id);
+  for (const c of curricula) for (const g of c.grades) for (const s of g.semesters) for (const u of s.units) assert.ok(!hasWesternDigits(u.title), u.id);
 });
 
 test('generation is reproducible from (lesson, difficulty, seed)', () => {
   for (const l of lessons) {
-    const a = generateExercise(curriculum, l.id, 1, { seed: 12345 });
-    const b = generateExercise(curriculum, l.id, 1, { seed: 12345 });
+    const a = generateExercise(curriculumOf.get(l.id), l.id, 1, { seed: 12345 });
+    const b = generateExercise(curriculumOf.get(l.id), l.id, 1, { seed: 12345 });
     assert.equal(a.prompt, b.prompt);
     assert.deepEqual(a.choices, b.choices);
     assert.notEqual(a.exercise_id, b.exercise_id, 'each generated instance needs its own id');
@@ -119,7 +122,7 @@ for (const lesson of lessons) {
         const seed = (i + 1) * 7919 + d * 104729 + lesson.id.length;
         let ex;
         try {
-          ex = generateExercise(curriculum, lesson.id, d, { seed });
+          ex = generateExercise(curriculumOf.get(lesson.id), lesson.id, d, { seed });
         } catch (e) {
           throw new Error(`${lesson.id} d${d} seed ${seed}: generation failed: ${e.message}`);
         }
